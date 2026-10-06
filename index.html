@@ -4,252 +4,176 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Jamshaid Khan Niazi — Flutter &amp; Web Developer</title>
-<meta name="description" content="Jamshaid Khan Niazi — Flutter and web developer, BS Computer Science student at PIEAS and founder of Niazi Tech. Apps on Google Play, client websites and desktop software.">
-<meta name="theme-color" content="#ece0c8">
+<meta name="description" content="Jamshaid Khan Niazi — Flutter and web developer, BS Computer Science student at PIEAS and founder of Niazi Tech.">
+<meta name="theme-color" content="#f3ece0">
 <meta property="og:title" content="Jamshaid Khan Niazi — Flutter & Web Developer">
-<meta property="og:description" content="Apps on Google Play, client websites and desktop software. BS Computer Science at PIEAS, founder of Niazi Tech.">
 <meta property="og:image" content="assets/profile.jpg">
 <link rel="icon" href="assets/cricvibes-icon.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#ece0c8;
-  --card:#fbf6ec;
-  --card-2:#f4ecdc;
-  --card-line:#d2bf9c;
-  --ink:#191c21;
-  --ink-2:#463f36;
-  --ink-3:#6e6455;
-  --line:#d6c6a6;
-  --accent:#0f6b5f;
-  --accent-2:#0b5249;
-  --accent-soft:#e2efeb;
-  --warm:#efe9de;
-  --shadow:0 1px 2px rgba(25,28,33,.05),0 12px 32px rgba(25,28,33,.07);
+  --bg:#f3ece0;      /* page: soft beige */
+  --surface:#fbf7f0; /* cards: lighter beige */
+  --line:#e3d8c5;
+  --ink:#2b2621;     /* warm near-black */
+  --ink-2:#5e554a;   /* warm grey-brown */
+  --accent:#9a5b34;  /* terracotta */
+  --accent-dark:#7d4726;
+  --accent-soft:#f0e1d2;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 "IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:Newsreader,Georgia,serif;font-weight:500;letter-spacing:-.01em;line-height:1.12;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Newsreader,Georgia,serif;font-weight:500;line-height:1.15;margin:0;letter-spacing:-.01em}
 p{margin:0;color:var(--ink-2)}
 a{color:inherit}
 img{display:block;max-width:100%}
-.wrap{width:min(1120px,calc(100% - 48px));margin:0 auto}
-.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;letter-spacing:.02em;color:var(--ink-3)}
-svg.i{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.wrap{width:min(1080px,calc(100% - 48px));margin:0 auto}
+.label{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .print-only{display:none}
 
-/* buttons & links */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:6px;font:500 15px/1 "IBM Plex Sans",sans-serif;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
-.btn-accent{background:var(--accent);color:#fff}
-.btn-accent:hover{background:var(--accent-2)}
-.btn-line{background:transparent;border-color:#cfcabe;color:var(--ink)}
-.btn-line:hover{border-color:var(--ink)}
-.textlink{display:inline-flex;align-items:center;gap:6px;font-weight:500;color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
-.textlink:hover{border-color:var(--accent)}
-.textlink svg.i{width:15px;height:15px}
-
 /* header */
-.top{position:sticky;top:0;z-index:20;background:rgba(236,224,200,.94);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
-.top.scrolled{border-color:var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
-.logo{font-family:Newsreader,serif;font-size:21px;font-weight:600;text-decoration:none;letter-spacing:-.01em}
+.top{position:sticky;top:0;z-index:20;background:rgba(243,236,224,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:Newsreader,serif;font-size:21px;text-decoration:none}
 .logo span{color:var(--accent)}
-.nav{display:flex;align-items:center;gap:28px;font-size:14.5px}
+.nav{display:flex;gap:28px;font-size:15px}
 .nav a{text-decoration:none;color:var(--ink-2)}
-.nav a:hover{color:var(--ink)}
-.nav .btn{padding:9px 16px;font-size:14px;color:#fff}
+.nav a:hover{color:var(--accent)}
 
 /* hero */
-.hero{padding:72px 0 56px}
-.hero .wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:64px;align-items:center}
-.hero h1{font-size:64px;margin:18px 0 24px}
-.hero h1 em{font-style:italic;color:var(--accent)}
-.hero .lede{font-size:18.5px;max-width:560px}
-.hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0 26px}
-.avail{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;color:var(--ink-2)}
-.avail i{width:9px;height:9px;border-radius:50%;background:#2f9e6a;box-shadow:0 0 0 4px rgba(47,158,106,.16)}
-.portrait{margin:0;background:#fbf7ef;border:1px solid var(--line);border-radius:10px;padding:12px;box-shadow:var(--shadow);transform:rotate(1.2deg)}
-.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:6px}
-.portrait figcaption{padding:14px 6px 4px}
-.portrait b{display:block;font-family:Newsreader,serif;font-size:20px;font-weight:600}
-.portrait span{font-size:14px;color:var(--ink-2)}
-
-/* stats */
-.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{padding:26px 24px}
-.stat + .stat{border-left:1px solid var(--line)}
-.stat b{display:block;font-family:Newsreader,serif;font-size:40px;font-weight:500;line-height:1}
-.stat span{display:block;margin-top:8px;font-size:14px;color:var(--ink-2)}
-.clients{padding:22px 0 0}
-.clients .wrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 26px}
-.clients span.c{font-family:Newsreader,serif;font-size:19px;color:var(--ink)}
+.hero{padding:72px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.4fr .6fr;gap:56px;align-items:center}
+.hero h1{font-size:54px;margin:12px 0 20px}
+.hero h1 em{color:var(--accent)}
+.hero p.lede{font-size:18px;max-width:560px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;padding:12px 20px;border-radius:6px;font:500 15px/1 "IBM Plex Sans",sans-serif;text-decoration:none;border:1px solid transparent;cursor:pointer}
+.btn-main{background:var(--accent);color:#fff}
+.btn-main:hover{background:var(--accent-dark)}
+.btn-line{background:transparent;border-color:var(--accent);color:var(--accent)}
+.btn-line:hover{background:var(--accent-soft)}
+.photo{border-radius:12px;overflow:hidden;border:6px solid var(--surface);box-shadow:0 10px 30px rgba(60,40,20,.12)}
+.photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
 
 /* sections */
-section{padding:80px 0}
-.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:28px;flex-wrap:wrap}
-.head h2{font-size:44px}
-.head p{max-width:440px}
-.kicker{display:block;margin-bottom:10px}
+section{padding:72px 0;border-top:1px solid var(--line)}
+.sec-head{margin-bottom:28px}
+.sec-head h2{font-size:40px;margin-top:6px}
 
-/* featured projects */
-.project{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:22px;margin-bottom:16px;background:var(--card);border:1px solid var(--card-line);border-radius:14px;box-shadow:0 2px 6px rgba(70,55,30,.06),0 14px 30px rgba(70,55,30,.08)}
-.project.flip .media{order:2}
-.media{border-radius:10px;padding:28px;display:flex;align-items:center;justify-content:center;min-height:330px;position:relative;overflow:hidden}
-.media.green{background:#d5e3d9}
-.media.warm{background:#efe3cc}
-.media.sand{background:#efe3cc}
-.media.mist{background:#dde3df}
-.media.col{padding-top:64px}
-.phones{display:flex;gap:4%;align-items:flex-end;justify-content:center;width:100%;padding-top:24px}
-.phone{width:29%;max-width:150px;border:6px solid #1c1f24;border-radius:24px;overflow:hidden;background:#1c1f24;box-shadow:0 18px 36px rgba(25,28,33,.18)}
-.phone:nth-child(2){width:32%;max-width:170px;transform:translateY(-14px)}
-.phone img{width:100%}
-.frame{width:100%;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 18px 40px rgba(25,28,33,.16);border:1px solid rgba(25,28,33,.08)}
-.frame .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#f3f1ec;border-bottom:1px solid #e6e2d8}
-.frame .bar i{width:9px;height:9px;border-radius:50%;background:#d6d1c6}
-.frame .bar .url{margin-left:10px;flex:1;background:#fff;border:1px solid #e6e2d8;border-radius:5px;padding:3px 10px;font:12px "IBM Plex Mono",monospace;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.frame img{width:100%}
-.tag{position:absolute;top:18px;left:18px;display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:30px;padding:5px 12px;font-size:13px;font-weight:500}
-.tag img{width:22px;height:22px;border-radius:6px;margin-left:-6px}
-.tag .dot{width:8px;height:8px;border-radius:50%;background:#2f9e6a;margin-left:4px}
-.info .num{font-family:Newsreader,serif;font-size:15px;color:var(--accent);font-style:italic}
-.info h3{font-size:32px;margin:4px 0 4px}
-.info .meta{display:block;margin-bottom:12px}
-.info > p{font-size:16px}
-.points{list-style:none;margin:14px 0 16px;padding:0;display:grid;gap:6px}
-.points li{position:relative;padding-left:20px;font-size:15px;color:var(--ink)}
-.points li::before{content:"";position:absolute;left:0;top:11px;width:9px;height:2px;background:var(--accent)}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
-.chips span{font:12.5px "IBM Plex Mono",monospace;color:var(--ink-2);background:var(--card-2);border:1px solid var(--card-line);border-radius:4px;padding:3px 8px}
-.links{display:flex;gap:22px;flex-wrap:wrap}
+/* projects */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filters button{font:500 14px "IBM Plex Sans",sans-serif;padding:8px 16px;border-radius:30px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer}
+.filters button:hover{border-color:var(--accent);color:var(--accent)}
+.filters button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.filters small{opacity:.75;margin-left:4px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover,.card:focus-visible{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 12px 26px rgba(60,40,20,.10)}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card[hidden]{display:none}
+.thumb{height:150px;background:#efe6d8;overflow:hidden;border-bottom:1px solid var(--line)}
+.thumb img{width:100%;height:100%;object-fit:cover;object-position:top}
+.phone-thumb{display:flex;justify-content:center;align-items:center;background:#e4ece3}
+.phone-thumb img{width:92px;height:92px;object-fit:cover;border-radius:22px;box-shadow:0 8px 18px rgba(40,30,20,.18)}
+.plain{display:flex;align-items:center;justify-content:center;background:var(--accent-soft)}
+.plain span{font-family:Newsreader,serif;font-size:40px;color:var(--accent)}
+.badge{align-self:flex-start;margin:16px 18px 0;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:3px 10px;border-radius:20px}
+.card h3{font-size:20px;margin:10px 18px 6px}
+.card p{font-size:14px;margin:0 18px;flex:1}
+.card .more{margin:14px 18px 18px;font-size:14.5px;font-weight:500;color:var(--accent)}
 
-/* more projects */
-.more{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0}
-.small{background:var(--card);border:1px solid var(--card-line);border-radius:14px;padding:24px;box-shadow:0 2px 6px rgba(70,55,30,.06),0 10px 24px rgba(70,55,30,.07);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
-.small:hover{border-color:var(--accent);transform:translateY(-3px)}
-.small:hover .textlink{border-color:var(--accent)}
-.more.two{grid-template-columns:repeat(2,1fr)}
-.cat{display:flex;align-items:baseline;gap:14px;margin:44px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
-.cat:first-of-type{margin-top:8px}
-.cat h3{font-size:28px}
-.cat .mono{margin-left:auto}
-.with{display:inline-block;margin-bottom:14px;font-size:14px;color:var(--ink)}
-.with b{font-weight:600}
-.small h4{font-family:Newsreader,serif;font-size:22px;font-weight:500;margin:8px 0}
-.small p{font-size:14.5px;margin-bottom:16px}
-.small .chips{margin-bottom:16px}
-.small .textlink{margin-top:auto;font-size:14.5px}
+/* project dialog */
+dialog{border:0;padding:0;border-radius:14px;width:min(760px,calc(100% - 32px));max-height:calc(100vh - 48px);background:var(--surface);color:var(--ink);box-shadow:0 24px 60px rgba(40,25,10,.25)}
+dialog::backdrop{background:rgba(43,38,33,.45)}
+.dlg{padding:30px 32px 32px;position:relative}
+.close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--bg);font-size:20px;line-height:1;cursor:pointer;color:var(--ink)}
+.close:hover{border-color:var(--accent);color:var(--accent)}
+.dlg h3{font-size:32px;margin:10px 48px 4px 0}
+.dlg .meta{font-size:14px;color:var(--ink-2);margin-bottom:18px}
+.shots{display:flex;gap:12px;overflow-x:auto;margin-bottom:20px;padding-bottom:4px}
+.shots img{border-radius:8px;border:1px solid var(--line);height:240px;width:auto}
+.shots.wide img{height:auto;width:100%;min-width:100%}
+.dlg ul{margin:14px 0 18px;padding-left:20px;display:grid;gap:6px}
+.tech{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.tech span{font-size:13px;padding:4px 10px;border-radius:5px;background:var(--bg);border:1px solid var(--line);color:var(--ink-2)}
+.dlg .actions{margin-top:0}
 
-/* CV: experience & education */
-.cv{background:var(--card-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.cvgrid{display:grid;grid-template-columns:1.35fr .65fr;gap:72px}
-.cv h2{font-size:36px;margin-bottom:28px}
-.job{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:24px 0;border-top:1px solid var(--line)}
+/* experience / CV */
+.cvgrid{display:grid;grid-template-columns:1.4fr .6fr;gap:56px}
+.job{padding:20px 0;border-top:1px solid var(--line)}
 .job:last-child{border-bottom:1px solid var(--line)}
-.job h3{font-size:22px;margin-bottom:2px}
-.job .org{font-size:15px;color:var(--accent);font-weight:500;margin-bottom:10px}
-.job ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:15px;display:grid;gap:5px}
-.side h3.lbl{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:0 0 14px}
-.side .block{margin-bottom:40px}
-.edu b{display:block;font-family:Newsreader,serif;font-size:21px;font-weight:500;line-height:1.25}
-.edu span{display:block;font-size:15px;color:var(--ink-2);margin-top:4px}
-.skillgroup{margin-bottom:16px}
-.skillgroup b{display:block;font-size:14px;margin-bottom:6px}
-.skillgroup .chips{margin:0}
-.cert{display:block;padding:14px 0;border-top:1px solid var(--line);text-decoration:none}
+.job .when{font-size:13.5px;color:var(--ink-2)}
+.job h3{font-size:22px;margin:4px 0 2px}
+.job .org{color:var(--accent);font-weight:500;font-size:15px;margin-bottom:8px}
+.job ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:15px;display:grid;gap:4px}
+.side h3{font-family:"IBM Plex Sans",sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+.side .block{margin-bottom:34px}
+.edu b{display:block;font-family:Newsreader,serif;font-size:21px;font-weight:500}
+.edu span{display:block;color:var(--ink-2);font-size:15px}
+.skills{display:grid;gap:10px}
+.skills div{font-size:15px}
+.skills b{font-weight:600}
+.skills span{color:var(--ink-2)}
+.cert{display:block;padding:12px 0;border-top:1px solid var(--line);text-decoration:none}
 .cert:last-child{border-bottom:1px solid var(--line)}
-.cert b{display:block;font-weight:500;font-size:15px;line-height:1.4}
-.cert span{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;color:var(--ink-3);margin-top:3px}
-.cert span em{font-style:normal;color:var(--accent);white-space:nowrap}
+.cert b{display:block;font-weight:500;font-size:15px}
+.cert span{font-size:13.5px;color:var(--ink-2)}
 .cert:hover b{color:var(--accent)}
 
 /* contact */
-.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end}
-.contact h2{font-size:60px}
-.contact h2 em{font-style:italic;color:var(--accent)}
-.contact p{margin-top:18px;font-size:17px;max-width:460px}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.contact h2{font-size:44px;margin:6px 0 14px}
 .clist{display:grid;gap:10px}
-.clist a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px;background:var(--card);border:1px solid var(--card-line);border-radius:8px;text-decoration:none;transition:border-color .2s}
+.clist a{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--surface);border:1px solid var(--line);border-radius:10px;text-decoration:none;transition:border-color .2s}
 .clist a:hover{border-color:var(--accent)}
-.clist .l{display:flex;align-items:center;gap:12px;font-weight:500}
-.clist .l svg.brand{width:24px;height:24px;flex-shrink:0;display:block}
-.clist .r{font:13px "IBM Plex Mono",monospace;color:var(--ink-2)}
-footer{padding:28px 0 40px}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px;font-size:14px;color:var(--ink-3)}
+.clist svg.brand{width:24px;height:24px;flex-shrink:0}
+.clist b{font-weight:500;min-width:90px}
+.clist span{color:var(--ink-2);font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+footer{padding:24px 0 36px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
 
-/* reveal on scroll */
-.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-
-/* responsive */
-@media(max-width:960px){
-  .nav a:not(.btn){display:none}
-  .hero .wrap{grid-template-columns:1fr;gap:40px}
-  .portrait{max-width:340px;transform:none}
-  .hero h1{font-size:48px}
-  .stats .wrap{grid-template-columns:1fr 1fr}
-  .stat:nth-child(3){border-left:0}
-  .stat:nth-child(n+3){border-top:1px solid var(--line)}
-  .project,.project.flip{grid-template-columns:1fr;gap:22px}
-  .project.flip .media{order:0}
-  .more,.more.two{grid-template-columns:1fr 1fr}
-  .cvgrid,.contact .wrap{grid-template-columns:1fr;gap:48px}
+@media(max-width:900px){
+  .hero .wrap,.cvgrid,.contact .wrap{grid-template-columns:1fr;gap:36px}
+  .photo{max-width:300px}
+  .grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:600px){
   .wrap{width:calc(100% - 32px)}
-  .hero{padding:44px 0 40px}
+  .nav{gap:16px;font-size:14px}
+  .nav a:last-child{display:none}
+  .hero{padding:44px 0}
   .hero h1{font-size:38px}
-  .hero .lede{font-size:16.5px}
-  .hero .actions .btn{flex:1 1 auto;justify-content:center}
-  section{padding:64px 0}
-  .head h2,.cv h2{font-size:32px}
-  .stat{padding:20px 16px}
-  .stat b{font-size:32px}
-  .project{padding:14px}
-  .media,.media.col{padding:16px;min-height:0;flex-direction:column;align-items:stretch}
-  .tag{position:static;align-self:flex-start;margin-bottom:14px}
-  .phones{justify-content:center;padding-top:10px}
-  .phone{width:31%;border-width:4px;border-radius:16px}
-  .phone:nth-child(2){width:34%}
-  .info h3{font-size:28px}
-  .more,.more.two{grid-template-columns:1fr}
-  .job{grid-template-columns:1fr;gap:6px}
-  .contact h2{font-size:42px}
-  .clist .r{display:none}
+  .hero p.lede{font-size:16.5px}
+  section{padding:56px 0}
+  .sec-head h2,.contact h2{font-size:32px}
+  .grid{grid-template-columns:1fr}
+  .dlg{padding:24px 18px}
+  .dlg h3{font-size:26px}
+  .shots img{height:200px}
+  .clist span{display:none}
 }
-
-/* print: a clean CV */
 @media print{
   @page{margin:14mm}
   body{background:#fff;font-size:10.5pt;line-height:1.45}
-  .project,.cv{background:#fff !important;border:0 !important;padding-left:0;padding-right:0}
-  .top,.hero .actions,.avail,.media,.more,.clist,.links,.stats,.clients,footer,.head p{display:none !important}
+  .top,.actions,.filters,.thumb,.card .more,.clist,footer,dialog{display:none !important}
   .print-only{display:block}
-  .cvname{font-family:Newsreader,serif;font-size:26pt;color:var(--ink);line-height:1.1;margin-bottom:4pt}
-  .hero h1{font-size:14pt !important;font-style:normal}
-  .rv{opacity:1 !important;transform:none !important}
-  section,.hero{padding:8pt 0}
+  section,.hero{padding:8pt 0;border:0}
   .wrap{width:100%}
-  .hero .wrap{grid-template-columns:1fr 95pt;gap:18pt}
-  .hero h1{font-size:20pt;margin:4pt 0 8pt}
-  .portrait{box-shadow:none;transform:none;padding:0;border:0}
-  .portrait figcaption{display:none}
-  .head{margin-bottom:4pt}
-  .head h2,.cv h2{font-size:15pt;margin-bottom:6pt}
-  .project,.project.flip{grid-template-columns:1fr;padding:6pt 0;gap:0;break-inside:avoid;border-top:1px solid #ddd}
-  .info h3{font-size:13pt}
-  .info .meta{margin-bottom:4pt}
-  .points{margin:4pt 0}
-  .chips{margin-bottom:0}
-  .cv{border:0}
+  .hero .wrap{grid-template-columns:1fr 90pt;gap:16pt}
+  .hero h1{font-size:15pt;margin:4pt 0}
+  .photo{border:0;box-shadow:none}
+  .sec-head{margin-bottom:6pt}
+  .sec-head h2{font-size:15pt}
+  .grid{grid-template-columns:1fr 1fr;gap:6pt}
+  .card{border:0;border-top:1px solid #ddd;border-radius:0;break-inside:avoid}
+  .card[hidden]{display:flex}
+  .badge{margin:6pt 0 0;padding:0;background:none}
+  .card h3{font-size:12pt;margin:2pt 0}
+  .card p{margin:0 0 4pt}
   .cvgrid{grid-template-columns:1.4fr .6fr;gap:18pt}
-  .job{grid-template-columns:80pt 1fr;padding:6pt 0;break-inside:avoid}
-  .side .block{margin-bottom:12pt}
+  .job{padding:6pt 0;break-inside:avoid}
   .contact{display:none}
   a{text-decoration:none}
 }
@@ -261,299 +185,213 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   <div class="wrap">
     <a class="logo" href="#">Jamshaid<span>.</span></a>
     <nav class="nav" aria-label="Main">
-      <a href="#work">Work</a>
-      <a href="#cv">Experience</a>
-      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
-      <a class="btn btn-accent" href="#contact">Hire me</a>
     </nav>
   </div>
 </header>
 
 <main>
-
-<!-- HERO -->
 <div class="hero">
   <div class="wrap">
     <div>
-      <p class="print-only cvname">Jamshaid Khan Niazi</p>
-      <span class="mono">Flutter &amp; Web Developer — Islamabad, Pakistan</span>
+      <p class="print-only" style="font-family:Newsreader,serif;font-size:24pt;color:#2b2621">Jamshaid Khan Niazi</p>
+      <span class="label">Flutter &amp; Web Developer · Islamabad</span>
       <h1>I build apps and websites that <em>real businesses</em> use.</h1>
-      <p class="lede">I'm Jamshaid Khan Niazi, a BS Computer Science student at PIEAS and founder of Niazi Tech. I've shipped a cricket app to Google Play, a point-of-sale system for a local shop, and websites for clients in Australia.</p>
+      <p class="lede">I'm Jamshaid Khan Niazi, a BS Computer Science student at PIEAS and founder of Niazi Tech. I've published an app on Google Play, built a point-of-sale system for a local shop, and made websites for clients in Australia.</p>
       <div class="actions">
-        <a class="btn btn-accent" href="#work">See my work</a>
-        <button class="btn btn-line" type="button" onclick="window.print()">Download CV (PDF)</button>
+        <a class="btn btn-main" href="#projects">View projects</a>
+        <button class="btn btn-line" type="button" onclick="window.print()">Download CV</button>
       </div>
-      <span class="avail"><i></i>Open to Flutter internships and freelance projects</span>
       <p class="print-only" style="margin-top:6pt">jamshaidkhanniazi.5965@gmail.com · +92 323 8530709 · linkedin.com/in/jamshaid-khan-niazi-34471a386 · github.com/jamshaidkhanniazi5965-ship-it</p>
     </div>
-    <figure class="portrait">
-      <img src="assets/profile.jpg" alt="Jamshaid Khan Niazi" width="640" height="853">
-      <figcaption><b>Jamshaid Khan Niazi</b><span>BS Computer Science, PIEAS · Founder, Niazi Tech</span></figcaption>
-    </figure>
+    <div class="photo"><img src="assets/profile.jpg" alt="Jamshaid Khan Niazi" width="640" height="853"></div>
   </div>
 </div>
 
-<div class="stats">
+<section id="projects">
   <div class="wrap">
-    <div class="stat"><b>1</b><span>App live on Google Play</span></div>
-    <div class="stat"><b>3</b><span>Client projects delivered</span></div>
-    <div class="stat"><b>7</b><span>Projects built</span></div>
-    <div class="stat"><b>3</b><span>Certifications</span></div>
-  </div>
-</div>
-<div class="clients">
-  <div class="wrap"><span class="mono">Built for</span><span class="c">Lateef Book Depo</span><span class="c">Haddad Empire, Sydney</span><span class="c">Pathway to Scripture, Sydney</span></div>
-</div>
-
-<!-- WORK -->
-<section id="work">
-  <div class="wrap">
-    <div class="head rv">
-      <div><span class="mono kicker">Projects</span><h2>Things I've built</h2></div>
-      <p>Client work, my own products and university projects, all in one place.</p>
+    <div class="sec-head"><span class="label">Projects</span><h2>Things I've built</h2></div>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button type="button" class="on" data-f="all">All <small>7</small></button>
+      <button type="button" data-f="Client">Client <small>3</small></button>
+      <button type="button" data-f="Personal">Personal <small>2</small></button>
+      <button type="button" data-f="Semester">Semester <small>2</small></button>
     </div>
-
-    <div class="cat rv"><h3>Client projects</h3><span class="mono">3 delivered</span></div>
-    <article class="project rv">
-      <div class="media warm col">
-        <span class="tag">First paid client project</span>
-        <div class="frame">
-          <div class="bar"><i></i><i></i><i></i><span class="url">Shop Manager — Windows desktop</span></div>
-          <img src="assets/lateef-analytics.webp" alt="Reports and profit analytics screen" loading="lazy">
-        </div>
-      </div>
-      <div class="info">
-        <span class="num">01</span>
+    <div class="grid">
+      <button class="card" type="button" data-cat="Client" data-id="lateef" aria-haspopup="dialog">
+        <div class="thumb"><img src="assets/lateef-analytics.webp" alt="" loading="lazy"></div>
+        <span class="badge">Client</span>
         <h3>Lateef Book Depo — Shop Manager</h3>
-        <span class="mono meta">Windows desktop app · Client project</span>
-        <p>An offline point-of-sale, inventory and credit (udhaar) system that replaced handwritten bills at a stationery shop. I handled everything from requirements to on-site installation.</p>
-        <ul class="points">
-          <li>Billing with cash, card, QR, credit and partial payments</li>
-          <li>Customer credit ledger with part-payments</li>
-          <li>80 mm thermal receipt printing</li>
-          <li>Sales and profit reports, JSON backup and restore</li>
-        </ul>
-        <div class="chips"><span>Flutter (Windows)</span><span>Drift / SQLite</span><span>PDF &amp; printing</span><span>Inno Setup</span></div>
-        <div class="links">
-          <a class="textlink" href="https://github.com/jamshaidkhanniazi5965-ship-it/lateef-book-depo-shop-manager" target="_blank" rel="noopener">GitHub <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <article class="project flip rv">
-      <div class="media sand col">
-        <span class="tag">Live client website</span>
-        <div class="frame">
-          <div class="bar"><i></i><i></i><i></i><span class="url">haddadempire.com</span></div>
-          <img src="assets/haddad-empire.webp" alt="Haddad Empire website home page" loading="lazy">
-        </div>
-      </div>
-      <div class="info">
-        <span class="num">02</span>
+        <p>Point-of-sale, inventory and credit system for a stationery shop.</p>
+        <span class="more">View details →</span>
+      </button>
+      <button class="card" type="button" data-cat="Client" data-id="haddad" aria-haspopup="dialog">
+        <div class="thumb"><img src="assets/haddad-empire.webp" alt="" loading="lazy"></div>
+        <span class="badge">Client</span>
         <h3>Haddad Empire</h3>
-        <span class="mono meta">Website · Client in Sydney, Australia</span>
-        <p>A media showcase and business-growth site for a Sydney-based agency, refined over several rounds of client feedback.</p>
-        <ul class="points">
-          <li>Custom branding around the family crest</li>
-          <li>Founder story, services, partners and business showcase</li>
-          <li>Contact form that sends by email, WhatsApp or SMS</li>
-          <li>Deployed on Netlify with a custom domain</li>
-        </ul>
-        <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Netlify</span><span>Responsive design</span></div>
-        <div class="links">
-          <a class="textlink" href="https://haddadempire.com" target="_blank" rel="noopener">Visit site <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <article class="project rv">
-      <div class="media mist col">
-        <span class="tag">Live client website</span>
-        <div class="frame">
-          <div class="bar"><i></i><i></i><i></i><span class="url">pathwaytoscripture.org</span></div>
-          <img src="assets/pathway-to-scripture.webp" alt="Pathway to Scripture website home page" loading="lazy">
-        </div>
-      </div>
-      <div class="info">
-        <span class="num">03</span>
+        <p>Media and business-growth website for a Sydney agency.</p>
+        <span class="more">View details →</span>
+      </button>
+      <button class="card" type="button" data-cat="Client" data-id="pathway" aria-haspopup="dialog">
+        <div class="thumb"><img src="assets/pathway-to-scripture.webp" alt="" loading="lazy"></div>
+        <span class="badge">Client</span>
         <h3>Pathway to Scripture</h3>
-        <span class="mono meta">Website · Client in Sydney, Australia</span>
-        <p>A multi-page website for a Bible-study ministry, built to be calm, clear and easy for the community to use.</p>
-        <ul class="points">
-          <li>About, Bible Studies, Events, Resources and Contact pages</li>
-          <li>Study programmes with clear "who it's for" details</li>
-          <li>Events, donations, FAQs and newsletter sign-up</li>
-          <li>Deployed on Netlify with a custom domain</li>
-        </ul>
-        <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Netlify</span><span>Multi-page site</span></div>
-        <div class="links">
-          <a class="textlink" href="https://pathwaytoscripture.org" target="_blank" rel="noopener">Visit site <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <div class="cat rv"><h3>Personal projects</h3><span class="mono">Niazi Tech &amp; self-learning</span></div>
-    <article class="project flip rv">
-      <div class="media green">
-        <span class="tag"><img src="assets/cricvibes-icon.webp" alt="">Live on Google Play<span class="dot"></span></span>
-        <div class="phones">
-          <div class="phone"><img src="assets/cricvibes-scores.webp" alt="Live scores screen" loading="lazy"></div>
-          <div class="phone"><img src="assets/cricvibes-rankings.webp" alt="ICC rankings screen" loading="lazy"></div>
-          <div class="phone"><img src="assets/cricvibes-compare.webp" alt="Player comparison screen" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="info">
-        <span class="num">04</span>
+        <p>Multi-page website for a Bible-study ministry.</p>
+        <span class="more">View details →</span>
+      </button>
+      <button class="card" type="button" data-cat="Personal" data-id="cricvibes" aria-haspopup="dialog">
+        <div class="thumb phone-thumb"><img src="assets/cricvibes-icon.webp" alt="" loading="lazy"></div>
+        <span class="badge">Personal</span>
         <h3>Cric Vibes Live</h3>
-        <span class="mono meta">Android app · Niazi Tech · 2025–26</span>
-        <p>A cricket companion app I designed, built and published on my own, with online and offline features.</p>
-        <ul class="points">
-          <li>Live international and domestic scores</li>
-          <li>ICC rankings, player search and head-to-head comparison</li>
-          <li>Cricket news and upcoming match schedule</li>
-          <li>Offline tournament creator, world records and rules</li>
-        </ul>
-        <div class="chips"><span>Flutter</span><span>Dart</span><span>Firebase</span><span>Firestore</span><span>REST API</span><span>FCM</span><span>Play Console</span></div>
-        <div class="links">
-          <a class="textlink" href="https://play.google.com/store/apps/details?id=com.niazicricket.app" target="_blank" rel="noopener">Google Play <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-          <a class="textlink" href="https://github.com/jamshaidkhanniazi5965-ship-it/cric-vibes-live" target="_blank" rel="noopener">GitHub <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <div class="more two">
-      <a class="small rv" href="https://www.coursera.org/account/accomplishments/verify/XY9OLLDVPOR5" target="_blank" rel="noopener">
-        <span class="mono">Flutter · IBM course final project · 2026</span>
-        <h4>Time Tracking App</h4>
-        <p>Log time against projects and tasks, grouped by project and saved locally between sessions.</p>
-        <div class="chips"><span>Flutter</span><span>Provider</span><span>LocalStorage</span></div>
-        <span class="textlink">View certificate <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-      </a>
-    </div>
-
-    <div class="cat rv"><h3>Semester projects</h3><span class="mono">PIEAS · BS Computer Science</span></div>
-    <div class="more two">
-      <a class="small rv" href="https://github.com/jamshaidkhanniazi5965-ship-it/cricket-statistics-management-system" target="_blank" rel="noopener">
-        <span class="mono">C · 1st semester · 2025</span>
-        <h4>Cricket Statistics Management System</h4>
-        <span class="with">Solo project</span>
-        <p>Console database of 25 international players' ODI, T20 and Test batting and bowling stats, with search by name or jersey number and side-by-side comparison.</p>
-        <div class="chips"><span>C</span><span>Structs</span><span>File handling</span><span>ANSI console UI</span></div>
-        <span class="textlink">View on GitHub <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-      </a>
-      <a class="small rv" href="https://github.com/jamshaidkhanniazi5965-ship-it/mess-management-system" target="_blank" rel="noopener">
-        <span class="mono">Java · 2nd semester OOP project · 2025</span>
-        <h4>Mess Management System</h4>
-        <span class="with">Group project with <b>Madiha Riaz</b></span>
-        <p>Desktop meal-management app with role-based access for admins, staff and students across 8 Java Swing screens, backed by MySQL.</p>
-        <div class="chips"><span>Java Swing</span><span>MySQL</span><span>OOP</span></div>
-        <span class="textlink">View on GitHub <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-      </a>
+        <p>Cricket app with live scores, rankings and stats. Live on Google Play.</p>
+        <span class="more">View details →</span>
+      </button>
+      <button class="card" type="button" data-cat="Personal" data-id="timetracker" aria-haspopup="dialog">
+        <div class="thumb plain"><span>Flutter</span></div>
+        <span class="badge">Personal</span>
+        <h3>Time Tracking App</h3>
+        <p>Log time against projects and tasks, saved locally.</p>
+        <span class="more">View details →</span>
+      </button>
+      <button class="card" type="button" data-cat="Semester" data-id="cricstats" aria-haspopup="dialog">
+        <div class="thumb plain"><span>C</span></div>
+        <span class="badge">Semester</span>
+        <h3>Cricket Statistics System</h3>
+        <p>Console database of 25 players&#x27; stats with search and comparison.</p>
+        <span class="more">View details →</span>
+      </button>
+      <button class="card" type="button" data-cat="Semester" data-id="mess" aria-haspopup="dialog">
+        <div class="thumb plain"><span>Java</span></div>
+        <span class="badge">Semester</span>
+        <h3>Mess Management System</h3>
+        <p>Java desktop app for managing university meals.</p>
+        <span class="more">View details →</span>
+      </button>
     </div>
   </div>
 </section>
 
-<!-- CV -->
-<section class="cv" id="cv">
+<section id="experience">
   <div class="wrap cvgrid">
-    <div class="rv">
-      <span class="mono kicker">Curriculum vitae</span>
-      <h2>Experience</h2>
+    <div>
+      <div class="sec-head"><span class="label">Experience</span><h2>Work so far</h2></div>
       <div class="job">
-        <div class="mono">2025 — Present</div>
-        <div>
-          <h3>Founder &amp; Developer</h3>
-          <div class="org">Niazi Tech · Islamabad</div>
-          <ul>
-            <li>Built and published Cric Vibes Live on Google Play, handling releases through Play Console.</li>
-            <li>Deliver apps and websites for clients under the Niazi Tech brand.</li>
-          </ul>
-        </div>
+        <div class="when">2025 — Present</div>
+        <h3>Founder &amp; Developer</h3>
+        <div class="org">Niazi Tech · Islamabad</div>
+        <ul>
+          <li>Built and published Cric Vibes Live on Google Play.</li>
+          <li>Deliver apps and websites for clients under the Niazi Tech brand.</li>
+        </ul>
       </div>
       <div class="job">
-        <div class="mono">Client work</div>
-        <div>
-          <h3>Freelance Web Developer</h3>
-          <div class="org">Haddad Empire Pty Ltd · Sydney (remote)</div>
-          <ul>
-            <li>Designed and built haddadempire.com and pathwaytoscripture.org.</li>
-            <li>Worked directly from client feedback through multiple revision rounds.</li>
-            <li>Managed deployment, custom domains and contact-form delivery.</li>
-          </ul>
-        </div>
+        <div class="when">Client work</div>
+        <h3>Freelance Web Developer</h3>
+        <div class="org">Haddad Empire Pty Ltd · Sydney (remote)</div>
+        <ul>
+          <li>Designed and built haddadempire.com and pathwaytoscripture.org.</li>
+          <li>Worked from client feedback through several revision rounds, then handled deployment and domains.</li>
+        </ul>
       </div>
       <div class="job">
-        <div class="mono">Client work</div>
-        <div>
-          <h3>Flutter Developer</h3>
-          <div class="org">Lateef Book Depo · First paid project</div>
-          <ul>
-            <li>Gathered requirements and built a Windows point-of-sale and credit system.</li>
-            <li>Installed it on-site and set up thermal receipt printing on the owner's laptop.</li>
-          </ul>
-        </div>
+        <div class="when">Client work</div>
+        <h3>Flutter Developer</h3>
+        <div class="org">Lateef Book Depo · First paid project</div>
+        <ul>
+          <li>Built a Windows point-of-sale and credit system from the owner's requirements.</li>
+          <li>Installed it on-site and set up thermal receipt printing.</li>
+        </ul>
       </div>
     </div>
-
-    <aside class="side rv" id="skills">
+    <aside class="side">
       <div class="block edu">
-        <h3 class="lbl">Education</h3>
+        <h3>Education</h3>
         <b>BS Computer Science</b>
-        <span>Pakistan Institute of Engineering and Applied Sciences (PIEAS), Islamabad</span>
-        <span class="mono" style="margin-top:6px">2nd year · In progress</span>
+        <span>PIEAS, Islamabad · 2nd year, in progress</span>
       </div>
       <div class="block">
-        <h3 class="lbl">Skills</h3>
-        <div class="skillgroup"><b>Mobile</b><div class="chips"><span>Flutter</span><span>Dart</span><span>Provider</span><span>FCM</span><span>Play Console</span></div></div>
-        <div class="skillgroup"><b>Web</b><div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive design</span><span>Netlify</span></div></div>
-        <div class="skillgroup"><b>Data</b><div class="chips"><span>Firebase</span><span>Firestore</span><span>SQLite / Drift</span><span>MySQL</span><span>REST APIs</span></div></div>
-        <div class="skillgroup"><b>Languages</b><div class="chips"><span>Dart</span><span>Java</span><span>C</span><span>Python</span></div></div>
-        <div class="skillgroup"><b>Tools</b><div class="chips"><span>Git &amp; GitHub</span><span>Android Studio</span><span>Inno Setup</span><span>AI-assisted dev</span></div></div>
+        <h3>Skills</h3>
+        <div class="skills">
+          <div><b>Mobile:</b> <span>Flutter, Dart, Provider, FCM, Play Console</span></div>
+          <div><b>Web:</b> <span>HTML, CSS, JavaScript, Netlify</span></div>
+          <div><b>Data:</b> <span>Firebase, Firestore, SQLite, MySQL, REST APIs</span></div>
+          <div><b>Languages:</b> <span>Dart, Java, C, Python</span></div>
+          <div><b>Tools:</b> <span>Git &amp; GitHub, Android Studio</span></div>
+        </div>
       </div>
       <div class="block">
-        <h3 class="lbl">Certifications</h3>
-        <a class="cert" href="https://www.coursera.org/account/accomplishments/verify/XY9OLLDVPOR5" target="_blank" rel="noopener"><b>Flutter and Dart: Developing iOS, Android, and Mobile Apps</b><span>IBM · Coursera · Aug 2026 <em>Verify ↗</em></span></a>
-        <a class="cert" href="https://coursera.org/verify/USAUCBI16GQP" target="_blank" rel="noopener"><b>Crash Course on Python</b><span>Google · Coursera · Aug 2026 <em>Verify ↗</em></span></a>
-        <a class="cert" href="https://alison.com/verify/684d7a5885" target="_blank" rel="noopener"><b>Introduction to Mobile App Development with Flutter</b><span>Alison · Mar 2026 <em>Verify ↗</em></span></a>
+        <h3>Certifications</h3>
+        <a class="cert" href="https://www.coursera.org/account/accomplishments/verify/XY9OLLDVPOR5" target="_blank" rel="noopener"><b>Flutter and Dart: Developing iOS, Android, and Mobile Apps</b><span>IBM · Coursera · 2026 · Verify ↗</span></a>
+        <a class="cert" href="https://coursera.org/verify/USAUCBI16GQP" target="_blank" rel="noopener"><b>Crash Course on Python</b><span>Google · Coursera · 2026 · Verify ↗</span></a>
+        <a class="cert" href="https://alison.com/verify/684d7a5885" target="_blank" rel="noopener"><b>Introduction to Mobile App Development with Flutter</b><span>Alison · 2026 · Verify ↗</span></a>
       </div>
     </aside>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap">
-    <div class="rv">
-      <span class="mono kicker">Contact</span>
-      <h2>Let's build something <em>together.</em></h2>
-      <p>I'm open to Flutter internships and freelance app or website projects. The quickest way to reach me is email or WhatsApp.</p>
+    <div>
+      <span class="label">Contact</span>
+      <h2>Let's work together</h2>
+      <p>Open to Flutter internships and freelance app or website projects. Email or WhatsApp is the quickest way to reach me.</p>
     </div>
-    <div class="clist rv">
-      <a href="mailto:jamshaidkhanniazi.5965@gmail.com"><span class="l"><svg class="brand" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M1.6 21h3.8v-9.2L0 7.7v11.7C0 20.3.7 21 1.6 21z"/><path fill="#34A853" d="M18.6 21h3.8c.9 0 1.6-.7 1.6-1.6V7.7l-5.4 4.1z"/><path fill="#FBBC04" d="M18.6 4.7v7.1L24 7.7V5.6c0-2-2.3-3.1-3.9-1.9z"/><path fill="#EA4335" d="M5.4 11.8V4.7L12 9.6l6.6-4.9v7.1L12 16.7z"/><path fill="#C5221F" d="M0 5.6v2.1l5.4 4.1V4.7L3.9 3.6C2.3 2.4 0 3.6 0 5.6z"/></svg>Email</span><span class="r">jamshaidkhanniazi.5965@gmail.com</span></a>
-      <a href="https://wa.me/923238530709" target="_blank" rel="noopener"><span class="l"><svg class="brand" viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 0a12 12 0 0 0-10.3 18.1L0 24l6.1-1.6A12 12 0 1 0 12 0z"/><path fill="#fff" d="M17.5 14.4c-.3-.15-1.8-.9-2.05-1-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.57c-.2 0-.53.07-.8.38-.28.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.23 5.13 4.53.72.31 1.28.5 1.71.63.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z"/></svg>WhatsApp</span><span class="r">+92 323 8530709</span></a>
-      <a href="https://www.linkedin.com/in/jamshaid-khan-niazi-34471a386" target="_blank" rel="noopener"><span class="l"><svg class="brand" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.3H4.6V19h2.5zM5.85 5a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9zM19.4 13.4c0-2.6-1.4-4.3-3.6-4.3-1.3 0-2.1.7-2.5 1.3V9.3h-2.4V19h2.5v-5.1c0-1.3.6-2.2 1.7-2.2s1.6.8 1.6 2.2V19h2.7z"/></svg>LinkedIn</span><span class="r">jamshaid-khan-niazi</span></a>
-      <a href="https://github.com/jamshaidkhanniazi5965-ship-it" target="_blank" rel="noopener"><span class="l"><svg class="brand" viewBox="0 0 24 24" aria-hidden="true"><path fill="#181717" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>GitHub</span><span class="r">jamshaidkhanniazi5965-ship-it</span></a>
+    <div class="clist">
+      <a href="mailto:jamshaidkhanniazi.5965@gmail.com"><svg class="brand" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M1.6 21h3.8v-9.2L0 7.7v11.7C0 20.3.7 21 1.6 21z"/><path fill="#34A853" d="M18.6 21h3.8c.9 0 1.6-.7 1.6-1.6V7.7l-5.4 4.1z"/><path fill="#FBBC04" d="M18.6 4.7v7.1L24 7.7V5.6c0-2-2.3-3.1-3.9-1.9z"/><path fill="#EA4335" d="M5.4 11.8V4.7L12 9.6l6.6-4.9v7.1L12 16.7z"/><path fill="#C5221F" d="M0 5.6v2.1l5.4 4.1V4.7L3.9 3.6C2.3 2.4 0 3.6 0 5.6z"/></svg><b>Email</b><span>jamshaidkhanniazi.5965@gmail.com</span></a>
+      <a href="https://wa.me/923238530709" target="_blank" rel="noopener"><svg class="brand" viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 0a12 12 0 0 0-10.3 18.1L0 24l6.1-1.6A12 12 0 1 0 12 0z"/><path fill="#fff" d="M17.5 14.4c-.3-.15-1.8-.9-2.05-1-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.57c-.2 0-.53.07-.8.38-.28.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.23 5.13 4.53.72.31 1.28.5 1.71.63.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z"/></svg><b>WhatsApp</b><span>+92 323 8530709</span></a>
+      <a href="https://www.linkedin.com/in/jamshaid-khan-niazi-34471a386" target="_blank" rel="noopener"><svg class="brand" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.3H4.6V19h2.5zM5.85 5a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9zM19.4 13.4c0-2.6-1.4-4.3-3.6-4.3-1.3 0-2.1.7-2.5 1.3V9.3h-2.4V19h2.5v-5.1c0-1.3.6-2.2 1.7-2.2s1.6.8 1.6 2.2V19h2.7z"/></svg><b>LinkedIn</b><span>jamshaid-khan-niazi</span></a>
+      <a href="https://github.com/jamshaidkhanniazi5965-ship-it" target="_blank" rel="noopener"><svg class="brand" viewBox="0 0 24 24" aria-hidden="true"><path fill="#181717" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg><b>GitHub</b><span>jamshaidkhanniazi5965-ship-it</span></a>
     </div>
   </div>
 </section>
-
 </main>
 
-<footer>
-  <div class="wrap"><span>© <span id="yr">2026</span> Jamshaid Khan Niazi · Niazi Tech</span><a href="#top" style="text-decoration:none">Back to top ↑</a></div>
-</footer>
+<footer><div class="wrap">© <span id="yr">2026</span> Jamshaid Khan Niazi · Niazi Tech</div></footer>
+
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <div class="dlg">
+    <button class="close" type="button" aria-label="Close" onclick="dlg.close()">×</button>
+    <span class="badge" id="dlgCat" style="margin:0"></span>
+    <h3 id="dlgTitle"></h3>
+    <div class="meta" id="dlgMeta"></div>
+    <div class="shots" id="dlgShots"></div>
+    <p id="dlgAbout"></p>
+    <ul id="dlgPoints"></ul>
+    <div class="tech" id="dlgTech"></div>
+    <div class="actions" id="dlgLinks"></div>
+  </div>
+</dialog>
 
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-const header = document.getElementById('top');
-addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 8), { passive: true });
-if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.rv').forEach(el => io.observe(el));
-} else {
-  document.querySelectorAll('.rv').forEach(el => el.classList.add('in'));
+const PROJECTS = {"lateef": {"id": "lateef", "cat": "Client", "title": "Lateef Book Depo \u2014 Shop Manager", "short": "Point-of-sale, inventory and credit system for a stationery shop.", "meta": "Windows desktop app \u00b7 First paid client project", "thumb": "assets/lateef-analytics.webp", "shots": ["assets/lateef-analytics.webp", "assets/lateef-udhaar.webp"], "kind": "wide", "about": "An offline point-of-sale, inventory and credit (udhaar) system that replaced handwritten bills at a stationery shop. I handled everything from gathering requirements to on-site installation and printer setup.", "points": ["Billing with cash, card, QR, credit and partial payments", "Customer credit ledger with part-payments", "80 mm thermal receipt printing", "Sales and profit reports, JSON backup and restore"], "tech": ["Flutter (Windows)", "Drift / SQLite", "PDF & printing", "Inno Setup"], "links": [["GitHub", "https://github.com/jamshaidkhanniazi5965-ship-it/lateef-book-depo-shop-manager"]]}, "haddad": {"id": "haddad", "cat": "Client", "title": "Haddad Empire", "short": "Media and business-growth website for a Sydney agency.", "meta": "Website \u00b7 Client in Sydney, Australia", "thumb": "assets/haddad-empire.webp", "shots": ["assets/haddad-empire.webp"], "kind": "wide", "about": "A media showcase and business-growth website for a Sydney-based agency, refined over several rounds of client feedback.", "points": ["Custom branding around the family crest", "Founder story, services, partners and business showcase", "Contact form that sends by email, WhatsApp or SMS", "Deployed on Netlify with a custom domain"], "tech": ["HTML", "CSS", "JavaScript", "Netlify"], "links": [["Visit site", "https://haddadempire.com"]]}, "pathway": {"id": "pathway", "cat": "Client", "title": "Pathway to Scripture", "short": "Multi-page website for a Bible-study ministry.", "meta": "Website \u00b7 Client in Sydney, Australia", "thumb": "assets/pathway-to-scripture.webp", "shots": ["assets/pathway-to-scripture.webp"], "kind": "wide", "about": "A multi-page website for a Bible-study ministry, built to be calm, clear and easy for the community to use.", "points": ["About, Bible Studies, Events, Resources and Contact pages", "Study programmes with clear \"who it's for\" details", "Events, donations, FAQs and newsletter sign-up", "Deployed on Netlify with a custom domain"], "tech": ["HTML", "CSS", "JavaScript", "Netlify"], "links": [["Visit site", "https://pathwaytoscripture.org"]]}, "cricvibes": {"id": "cricvibes", "cat": "Personal", "title": "Cric Vibes Live", "short": "Cricket app with live scores, rankings and stats. Live on Google Play.", "meta": "Android app \u00b7 Niazi Tech \u00b7 2025\u201326", "thumb": "assets/cricvibes-icon.webp", "shots": ["assets/cricvibes-scores.webp", "assets/cricvibes-rankings.webp", "assets/cricvibes-compare.webp", "assets/cricvibes-news.webp"], "kind": "phone", "about": "A cricket companion app I designed, built and published on my own under Niazi Tech, with both online and offline features.", "points": ["Live international and domestic scores", "ICC rankings, player search and head-to-head comparison", "Cricket news and upcoming match schedule", "Offline tournament creator, world records and rules"], "tech": ["Flutter", "Dart", "Firebase", "Firestore", "REST API", "FCM", "Play Console"], "links": [["Google Play", "https://play.google.com/store/apps/details?id=com.niazicricket.app"], ["GitHub", "https://github.com/jamshaidkhanniazi5965-ship-it/cric-vibes-live"]]}, "timetracker": {"id": "timetracker", "cat": "Personal", "title": "Time Tracking App", "short": "Log time against projects and tasks, saved locally.", "meta": "Flutter \u00b7 IBM course final project \u00b7 2026", "thumb": null, "label": "Flutter", "shots": [], "kind": "none", "about": "The final project for IBM's Flutter and Dart course on Coursera. Users log time entries against projects and tasks, see them grouped by project, and everything is saved locally between sessions.", "points": ["Add, view and delete time entries", "Group entries by project", "Manage projects and tasks", "Provider state management and multi-screen navigation"], "tech": ["Flutter", "Dart", "Provider", "LocalStorage"], "links": [["View certificate", "https://www.coursera.org/account/accomplishments/verify/XY9OLLDVPOR5"]]}, "cricstats": {"id": "cricstats", "cat": "Semester", "title": "Cricket Statistics System", "short": "Console database of 25 players' stats with search and comparison.", "meta": "C \u00b7 1st semester \u00b7 2025 \u00b7 Solo project", "thumb": null, "label": "C", "shots": [], "kind": "none", "about": "My first-semester project at PIEAS, built on my own in C. It stores detailed batting and bowling statistics for 25 international players across ODI, T20 and Test formats.", "points": ["Search players by name or jersey number", "Side-by-side comparison of two players", "Format-wise statistics (ODI, T20, Test)", "Coloured terminal UI using ANSI colours"], "tech": ["C", "Structs", "File handling"], "links": [["GitHub", "https://github.com/jamshaidkhanniazi5965-ship-it/cricket-statistics-management-system"]]}, "mess": {"id": "mess", "cat": "Semester", "title": "Mess Management System", "short": "Java desktop app for managing university meals.", "meta": "Java \u00b7 2nd semester OOP project \u00b7 2025 \u00b7 With Madiha Riaz", "thumb": null, "label": "Java", "shots": [], "kind": "none", "about": "A second-semester OOP project at PIEAS, built together with my group member Madiha Riaz. A desktop app for running the university mess, with separate access for admins, staff and students.", "points": ["Role-based access for admin, staff and student", "8 GUI screens built with Java Swing / AWT", "MySQL 8.0 database backend", "Consistent layout using GridBagLayout"], "tech": ["Java", "Java Swing", "MySQL", "OOP"], "links": [["GitHub", "https://github.com/jamshaidkhanniazi5965-ship-it/mess-management-system"]]}};
+const dlg = document.getElementById('dlg');
+const el = id => document.getElementById(id);
+const esc = t => t.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function openProject(id) {
+  const p = PROJECTS[id];
+  el('dlgCat').textContent = p.cat + ' project';
+  el('dlgTitle').textContent = p.title;
+  el('dlgMeta').textContent = p.meta;
+  el('dlgAbout').textContent = p.about;
+  const shots = el('dlgShots');
+  shots.className = 'shots' + (p.kind === 'wide' ? ' wide' : '');
+  shots.hidden = !p.shots.length;
+  shots.innerHTML = p.shots.map(s => '<img src="' + s + '" alt="">').join('');
+  el('dlgPoints').innerHTML = p.points.map(x => '<li>' + esc(x) + '</li>').join('');
+  el('dlgTech').innerHTML = p.tech.map(x => '<span>' + esc(x) + '</span>').join('');
+  el('dlgLinks').innerHTML = p.links.map((l, i) => '<a class="btn ' + (i ? 'btn-line' : 'btn-main') + '" href="' + l[1] + '" target="_blank" rel="noopener">' + esc(l[0]) + ' ↗</a>').join('');
+  dlg.showModal();
+  dlg.querySelector('.dlg').scrollTop = 0;
 }
+document.querySelectorAll('.card').forEach(c => c.addEventListener('click', () => openProject(c.dataset.id)));
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+document.querySelectorAll('.filters button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.filters button').forEach(x => x.classList.toggle('on', x === b));
+  document.querySelectorAll('.card').forEach(c => c.hidden = b.dataset.f !== 'all' && c.dataset.cat !== b.dataset.f);
+}));
+el('yr').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
