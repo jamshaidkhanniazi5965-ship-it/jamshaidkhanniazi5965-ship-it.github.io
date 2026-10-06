@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Jamshaid Khan Niazi — Flutter &amp; Web Developer</title>
 <meta name="description" content="Jamshaid Khan Niazi — Flutter and web developer, BS Computer Science student at PIEAS and founder of Niazi Tech. Apps on Google Play, client websites and desktop software.">
-<meta name="theme-color" content="#f7f5f0">
+<meta name="theme-color" content="#f3ecdf">
 <meta property="og:title" content="Jamshaid Khan Niazi — Flutter & Web Developer">
 <meta property="og:description" content="Apps on Google Play, client websites and desktop software. BS Computer Science at PIEAS, founder of Niazi Tech.">
 <meta property="og:image" content="assets/profile.jpg">
@@ -15,12 +15,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#f7f5f0;
-  --card:#ffffff;
+  --paper:#f3ecdf;
+  --card:#e9dfcc;
+  --card-2:#efe6d6;
+  --card-line:#dccfb7;
   --ink:#191c21;
   --ink-2:#545b66;
   --ink-3:#8a909a;
-  --line:#e3dfd5;
+  --line:#e0d5c2;
   --accent:#0f6b5f;
   --accent-2:#0b5249;
   --accent-soft:#e2efeb;
@@ -50,7 +52,7 @@ svg.i{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stro
 .textlink svg.i{width:15px;height:15px}
 
 /* header */
-.top{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.9);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+.top{position:sticky;top:0;z-index:20;background:rgba(243,236,223,.92);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
 .top.scrolled{border-color:var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
 .logo{font-family:Newsreader,serif;font-size:21px;font-weight:600;text-decoration:none;letter-spacing:-.01em}
@@ -69,7 +71,7 @@ svg.i{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stro
 .hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0 26px}
 .avail{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;color:var(--ink-2)}
 .avail i{width:9px;height:9px;border-radius:50%;background:#2f9e6a;box-shadow:0 0 0 4px rgba(47,158,106,.16)}
-.portrait{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;box-shadow:var(--shadow);transform:rotate(1.2deg)}
+.portrait{margin:0;background:#fbf7ef;border:1px solid var(--line);border-radius:10px;padding:12px;box-shadow:var(--shadow);transform:rotate(1.2deg)}
 .portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:6px}
 .portrait figcaption{padding:14px 6px 4px}
 .portrait b{display:block;font-family:Newsreader,serif;font-size:20px;font-weight:600}
@@ -87,20 +89,20 @@ svg.i{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stro
 .clients span.c{font-family:Newsreader,serif;font-size:19px;color:var(--ink)}
 
 /* sections */
-section{padding:96px 0}
-.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+section{padding:80px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:28px;flex-wrap:wrap}
 .head h2{font-size:44px}
 .head p{max-width:440px}
 .kicker{display:block;margin-bottom:10px}
 
 /* featured projects */
-.project{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:44px 0;border-top:1px solid var(--line)}
+.project{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:22px;margin-bottom:16px;background:var(--card);border:1px solid var(--card-line);border-radius:14px}
 .project.flip .media{order:2}
-.media{border-radius:12px;padding:34px;display:flex;align-items:center;justify-content:center;min-height:380px;position:relative;overflow:hidden}
-.media.green{background:var(--accent-soft)}
-.media.warm{background:var(--warm)}
-.media.sand{background:#ece6da}
-.media.mist{background:#e6ebef}
+.media{border-radius:10px;padding:28px;display:flex;align-items:center;justify-content:center;min-height:330px;position:relative;overflow:hidden}
+.media.green{background:#dce9e2}
+.media.warm{background:#f4ede0}
+.media.sand{background:#f4ede0}
+.media.mist{background:#e3e8e6}
 .media.col{padding-top:64px}
 .phones{display:flex;gap:16px;align-items:flex-end;padding-top:24px}
 .phone{width:150px;border:6px solid #1c1f24;border-radius:24px;overflow:hidden;background:#1c1f24;box-shadow:0 18px 36px rgba(25,28,33,.18)}
@@ -115,27 +117,27 @@ section{padding:96px 0}
 .tag img{width:22px;height:22px;border-radius:6px;margin-left:-6px}
 .tag .dot{width:8px;height:8px;border-radius:50%;background:#2f9e6a;margin-left:4px}
 .info .num{font-family:Newsreader,serif;font-size:15px;color:var(--accent);font-style:italic}
-.info h3{font-size:34px;margin:6px 0 6px}
-.info .meta{display:block;margin-bottom:16px}
+.info h3{font-size:32px;margin:4px 0 4px}
+.info .meta{display:block;margin-bottom:12px}
 .info > p{font-size:16px}
-.points{list-style:none;margin:18px 0 20px;padding:0;display:grid;gap:8px}
+.points{list-style:none;margin:14px 0 16px;padding:0;display:grid;gap:6px}
 .points li{position:relative;padding-left:20px;font-size:15px;color:var(--ink)}
 .points li::before{content:"";position:absolute;left:0;top:11px;width:9px;height:2px;background:var(--accent)}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
-.chips span{font:12.5px "IBM Plex Mono",monospace;color:var(--ink-2);background:var(--card);border:1px solid var(--line);border-radius:4px;padding:3px 8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.chips span{font:12.5px "IBM Plex Mono",monospace;color:var(--ink-2);background:var(--card-2);border:1px solid var(--card-line);border-radius:4px;padding:3px 8px}
 .links{display:flex;gap:22px;flex-wrap:wrap}
 
 /* more projects */
-.more{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
-.small{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
-.small:hover{border-color:#c9c3b6;transform:translateY(-2px)}
+.more{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0}
+.small{background:var(--card);border:1px solid var(--card-line);border-radius:14px;padding:24px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.small:hover{border-color:#c7b694;transform:translateY(-2px)}
 .small h4{font-family:Newsreader,serif;font-size:22px;font-weight:500;margin:8px 0}
 .small p{font-size:14.5px;margin-bottom:16px}
 .small .chips{margin-bottom:16px}
 .small .textlink{margin-top:auto;font-size:14.5px}
 
 /* CV: experience & education */
-.cv{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cv{background:var(--card-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .cvgrid{display:grid;grid-template-columns:1.35fr .65fr;gap:72px}
 .cv h2{font-size:36px;margin-bottom:28px}
 .job{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:24px 0;border-top:1px solid var(--line)}
@@ -163,7 +165,7 @@ section{padding:96px 0}
 .contact h2 em{font-style:italic;color:var(--accent)}
 .contact p{margin-top:18px;font-size:17px;max-width:460px}
 .clist{display:grid;gap:10px}
-.clist a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:8px;text-decoration:none;transition:border-color .2s}
+.clist a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px;background:var(--card);border:1px solid var(--card-line);border-radius:8px;text-decoration:none;transition:border-color .2s}
 .clist a:hover{border-color:var(--accent)}
 .clist .l{display:flex;align-items:center;gap:12px;font-weight:500}
 .clist .l svg.i{color:var(--accent)}
@@ -185,7 +187,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   .stats .wrap{grid-template-columns:1fr 1fr}
   .stat:nth-child(3){border-left:0}
   .stat:nth-child(n+3){border-top:1px solid var(--line)}
-  .project,.project.flip{grid-template-columns:1fr;gap:28px}
+  .project,.project.flip{grid-template-columns:1fr;gap:22px}
   .project.flip .media{order:0}
   .more{grid-template-columns:1fr 1fr}
   .cvgrid,.contact .wrap{grid-template-columns:1fr;gap:48px}
@@ -200,6 +202,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   .head h2,.cv h2{font-size:32px}
   .stat{padding:20px 16px}
   .stat b{font-size:32px}
+  .project{padding:14px}
   .media,.media.col{padding:16px;min-height:0;flex-direction:column;align-items:stretch}
   .tag{position:static;align-self:flex-start;margin-bottom:14px}
   .phones{justify-content:center;padding-top:10px}
@@ -216,6 +219,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 @media print{
   @page{margin:14mm}
   body{background:#fff;font-size:10.5pt;line-height:1.45}
+  .project,.cv{background:#fff !important;border:0 !important;padding-left:0;padding-right:0}
   .top,.hero .actions,.avail,.media,.more,.clist,.links,.stats,.clients,footer,.head p{display:none !important}
   .print-only{display:block}
   .cvname{font-family:Newsreader,serif;font-size:26pt;color:var(--ink);line-height:1.1;margin-bottom:4pt}
