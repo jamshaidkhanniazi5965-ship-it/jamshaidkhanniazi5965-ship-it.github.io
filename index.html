@@ -16,12 +16,12 @@
 <style>
 :root{
   --paper:#ece0c8;
-  --card:#e0d0b2;
-  --card-2:#e6d8bd;
-  --card-line:#cdb994;
+  --card:#fbf6ec;
+  --card-2:#f4ecdc;
+  --card-line:#d2bf9c;
   --ink:#191c21;
-  --ink-2:#545b66;
-  --ink-3:#8a909a;
+  --ink-2:#463f36;
+  --ink-3:#6e6455;
   --line:#d6c6a6;
   --accent:#0f6b5f;
   --accent-2:#0b5249;
@@ -96,17 +96,17 @@ section{padding:80px 0}
 .kicker{display:block;margin-bottom:10px}
 
 /* featured projects */
-.project{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:22px;margin-bottom:16px;background:var(--card);border:1px solid var(--card-line);border-radius:14px}
+.project{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:22px;margin-bottom:16px;background:var(--card);border:1px solid var(--card-line);border-radius:14px;box-shadow:0 2px 6px rgba(70,55,30,.06),0 14px 30px rgba(70,55,30,.08)}
 .project.flip .media{order:2}
 .media{border-radius:10px;padding:28px;display:flex;align-items:center;justify-content:center;min-height:330px;position:relative;overflow:hidden}
 .media.green{background:#d5e3d9}
-.media.warm{background:#f2e9d8}
-.media.sand{background:#f2e9d8}
+.media.warm{background:#efe3cc}
+.media.sand{background:#efe3cc}
 .media.mist{background:#dde3df}
 .media.col{padding-top:64px}
-.phones{display:flex;gap:16px;align-items:flex-end;padding-top:24px}
-.phone{width:150px;border:6px solid #1c1f24;border-radius:24px;overflow:hidden;background:#1c1f24;box-shadow:0 18px 36px rgba(25,28,33,.18)}
-.phone:nth-child(2){width:170px;transform:translateY(-14px)}
+.phones{display:flex;gap:4%;align-items:flex-end;justify-content:center;width:100%;padding-top:24px}
+.phone{width:29%;max-width:150px;border:6px solid #1c1f24;border-radius:24px;overflow:hidden;background:#1c1f24;box-shadow:0 18px 36px rgba(25,28,33,.18)}
+.phone:nth-child(2){width:32%;max-width:170px;transform:translateY(-14px)}
 .phone img{width:100%}
 .frame{width:100%;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 18px 40px rgba(25,28,33,.16);border:1px solid rgba(25,28,33,.08)}
 .frame .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#f3f1ec;border-bottom:1px solid #e6e2d8}
@@ -129,8 +129,16 @@ section{padding:80px 0}
 
 /* more projects */
 .more{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0}
-.small{background:var(--card);border:1px solid var(--card-line);border-radius:14px;padding:24px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
-.small:hover{border-color:#c7b694;transform:translateY(-2px)}
+.small{background:var(--card);border:1px solid var(--card-line);border-radius:14px;padding:24px;box-shadow:0 2px 6px rgba(70,55,30,.06),0 10px 24px rgba(70,55,30,.07);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.small:hover{border-color:var(--accent);transform:translateY(-3px)}
+.small:hover .textlink{border-color:var(--accent)}
+.more.two{grid-template-columns:repeat(2,1fr)}
+.cat{display:flex;align-items:baseline;gap:14px;margin:44px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.cat:first-of-type{margin-top:8px}
+.cat h3{font-size:28px}
+.cat .mono{margin-left:auto}
+.with{display:inline-block;margin-bottom:14px;font-size:14px;color:var(--ink)}
+.with b{font-weight:600}
 .small h4{font-family:Newsreader,serif;font-size:22px;font-weight:500;margin:8px 0}
 .small p{font-size:14.5px;margin-bottom:16px}
 .small .chips{margin-bottom:16px}
@@ -169,7 +177,7 @@ section{padding:80px 0}
 .clist a:hover{border-color:var(--accent)}
 .clist .l{display:flex;align-items:center;gap:12px;font-weight:500}
 .clist .l svg.brand{width:24px;height:24px;flex-shrink:0;display:block}
-.clist .r{font:13px "IBM Plex Mono",monospace;color:var(--ink-3)}
+.clist .r{font:13px "IBM Plex Mono",monospace;color:var(--ink-2)}
 footer{padding:28px 0 40px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px;font-size:14px;color:var(--ink-3)}
 
@@ -189,7 +197,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   .stat:nth-child(n+3){border-top:1px solid var(--line)}
   .project,.project.flip{grid-template-columns:1fr;gap:22px}
   .project.flip .media{order:0}
-  .more{grid-template-columns:1fr 1fr}
+  .more,.more.two{grid-template-columns:1fr 1fr}
   .cvgrid,.contact .wrap{grid-template-columns:1fr;gap:48px}
 }
 @media(max-width:600px){
@@ -209,7 +217,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   .phone{width:31%;border-width:4px;border-radius:16px}
   .phone:nth-child(2){width:34%}
   .info h3{font-size:28px}
-  .more{grid-template-columns:1fr}
+  .more,.more.two{grid-template-columns:1fr}
   .job{grid-template-columns:1fr;gap:6px}
   .contact h2{font-size:42px}
   .clist .r{display:none}
@@ -302,11 +310,91 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <section id="work">
   <div class="wrap">
     <div class="head rv">
-      <div><span class="mono kicker">Selected work</span><h2>Things I've shipped</h2></div>
-      <p>Real products with real users: a published Android app, desktop software for a paying client, and live client websites.</p>
+      <div><span class="mono kicker">Projects</span><h2>Things I've built</h2></div>
+      <p>Client work, my own products and university projects, all in one place.</p>
     </div>
 
+    <div class="cat rv"><h3>Client projects</h3><span class="mono">3 delivered</span></div>
     <article class="project rv">
+      <div class="media warm col">
+        <span class="tag">First paid client project</span>
+        <div class="frame">
+          <div class="bar"><i></i><i></i><i></i><span class="url">Shop Manager — Windows desktop</span></div>
+          <img src="assets/lateef-analytics.webp" alt="Reports and profit analytics screen" loading="lazy">
+        </div>
+      </div>
+      <div class="info">
+        <span class="num">01</span>
+        <h3>Lateef Book Depo — Shop Manager</h3>
+        <span class="mono meta">Windows desktop app · Client project</span>
+        <p>An offline point-of-sale, inventory and credit (udhaar) system that replaced handwritten bills at a stationery shop. I handled everything from requirements to on-site installation.</p>
+        <ul class="points">
+          <li>Billing with cash, card, QR, credit and partial payments</li>
+          <li>Customer credit ledger with part-payments</li>
+          <li>80 mm thermal receipt printing</li>
+          <li>Sales and profit reports, JSON backup and restore</li>
+        </ul>
+        <div class="chips"><span>Flutter (Windows)</span><span>Drift / SQLite</span><span>PDF &amp; printing</span><span>Inno Setup</span></div>
+        <div class="links">
+          <a class="textlink" href="https://github.com/jamshaidkhanniazi5965-ship-it/lateef-book-depo-shop-manager" target="_blank" rel="noopener">GitHub <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project flip rv">
+      <div class="media sand col">
+        <span class="tag">Live client website</span>
+        <div class="frame">
+          <div class="bar"><i></i><i></i><i></i><span class="url">haddadempire.com</span></div>
+          <img src="assets/haddad-empire.webp" alt="Haddad Empire website home page" loading="lazy">
+        </div>
+      </div>
+      <div class="info">
+        <span class="num">02</span>
+        <h3>Haddad Empire</h3>
+        <span class="mono meta">Website · Client in Sydney, Australia</span>
+        <p>A media showcase and business-growth site for a Sydney-based agency, refined over several rounds of client feedback.</p>
+        <ul class="points">
+          <li>Custom branding around the family crest</li>
+          <li>Founder story, services, partners and business showcase</li>
+          <li>Contact form that sends by email, WhatsApp or SMS</li>
+          <li>Deployed on Netlify with a custom domain</li>
+        </ul>
+        <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Netlify</span><span>Responsive design</span></div>
+        <div class="links">
+          <a class="textlink" href="https://haddadempire.com" target="_blank" rel="noopener">Visit site <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project rv">
+      <div class="media mist col">
+        <span class="tag">Live client website</span>
+        <div class="frame">
+          <div class="bar"><i></i><i></i><i></i><span class="url">pathwaytoscripture.org</span></div>
+          <img src="assets/pathway-to-scripture.webp" alt="Pathway to Scripture website home page" loading="lazy">
+        </div>
+      </div>
+      <div class="info">
+        <span class="num">03</span>
+        <h3>Pathway to Scripture</h3>
+        <span class="mono meta">Website · Client in Sydney, Australia</span>
+        <p>A multi-page website for a Bible-study ministry, built to be calm, clear and easy for the community to use.</p>
+        <ul class="points">
+          <li>About, Bible Studies, Events, Resources and Contact pages</li>
+          <li>Study programmes with clear "who it's for" details</li>
+          <li>Events, donations, FAQs and newsletter sign-up</li>
+          <li>Deployed on Netlify with a custom domain</li>
+        </ul>
+        <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Netlify</span><span>Multi-page site</span></div>
+        <div class="links">
+          <a class="textlink" href="https://pathwaytoscripture.org" target="_blank" rel="noopener">Visit site <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <div class="cat rv"><h3>Personal projects</h3><span class="mono">Niazi Tech &amp; self-learning</span></div>
+    <article class="project flip rv">
       <div class="media green">
         <span class="tag"><img src="assets/cricvibes-icon.webp" alt="">Live on Google Play<span class="dot"></span></span>
         <div class="phones">
@@ -316,7 +404,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
         </div>
       </div>
       <div class="info">
-        <span class="num">01</span>
+        <span class="num">04</span>
         <h3>Cric Vibes Live</h3>
         <span class="mono meta">Android app · Niazi Tech · 2025–26</span>
         <p>A cricket companion app I designed, built and published on my own, with online and offline features.</p>
@@ -334,105 +422,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       </div>
     </article>
 
-    <article class="project flip rv">
-      <div class="media warm col">
-        <span class="tag">First paid client project</span>
-        <div class="frame">
-          <div class="bar"><i></i><i></i><i></i><span class="url">Shop Manager — Windows desktop</span></div>
-          <img src="assets/lateef-analytics.webp" alt="Reports and profit analytics screen" loading="lazy">
-        </div>
-      </div>
-      <div class="info">
-        <span class="num">02</span>
-        <h3>Lateef Book Depo — Shop Manager</h3>
-        <span class="mono meta">Windows desktop app · Client project</span>
-        <p>An offline point-of-sale, inventory and credit (udhaar) system that replaced handwritten bills at a stationery shop. I handled everything from requirements to on-site installation.</p>
-        <ul class="points">
-          <li>Billing with cash, card, QR, credit and partial payments</li>
-          <li>Customer credit ledger with part-payments</li>
-          <li>80 mm thermal receipt printing</li>
-          <li>Sales and profit reports, JSON backup and restore</li>
-        </ul>
-        <div class="chips"><span>Flutter (Windows)</span><span>Drift / SQLite</span><span>PDF &amp; printing</span><span>Inno Setup</span></div>
-        <div class="links">
-          <a class="textlink" href="https://github.com/jamshaidkhanniazi5965-ship-it/lateef-book-depo-shop-manager" target="_blank" rel="noopener">GitHub <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <article class="project rv">
-      <div class="media sand col">
-        <span class="tag">Live client website</span>
-        <div class="frame">
-          <div class="bar"><i></i><i></i><i></i><span class="url">haddadempire.com</span></div>
-          <img src="assets/haddad-empire.webp" alt="Haddad Empire website home page" loading="lazy">
-        </div>
-      </div>
-      <div class="info">
-        <span class="num">03</span>
-        <h3>Haddad Empire</h3>
-        <span class="mono meta">Website · Client in Sydney, Australia</span>
-        <p>A media showcase and business-growth site for a Sydney-based agency, refined over several rounds of client feedback.</p>
-        <ul class="points">
-          <li>Custom branding around the family crest</li>
-          <li>Founder story, services, partners and business showcase</li>
-          <li>Contact form that sends by email, WhatsApp or SMS</li>
-          <li>Deployed on Netlify with a custom domain</li>
-        </ul>
-        <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Netlify</span><span>Responsive design</span></div>
-        <div class="links">
-          <a class="textlink" href="https://haddadempire.com" target="_blank" rel="noopener">Visit site <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <article class="project flip rv">
-      <div class="media mist col">
-        <span class="tag">Live client website</span>
-        <div class="frame">
-          <div class="bar"><i></i><i></i><i></i><span class="url">pathwaytoscripture.org</span></div>
-          <img src="assets/pathway-to-scripture.webp" alt="Pathway to Scripture website home page" loading="lazy">
-        </div>
-      </div>
-      <div class="info">
-        <span class="num">04</span>
-        <h3>Pathway to Scripture</h3>
-        <span class="mono meta">Website · Client in Sydney, Australia</span>
-        <p>A multi-page website for a Bible-study ministry, built to be calm, clear and easy for the community to use.</p>
-        <ul class="points">
-          <li>About, Bible Studies, Events, Resources and Contact pages</li>
-          <li>Study programmes with clear "who it's for" details</li>
-          <li>Events, donations, FAQs and newsletter sign-up</li>
-          <li>Deployed on Netlify with a custom domain</li>
-        </ul>
-        <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Netlify</span><span>Multi-page site</span></div>
-        <div class="links">
-          <a class="textlink" href="https://pathwaytoscripture.org" target="_blank" rel="noopener">Visit site <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <div class="more">
-      <article class="small rv">
-        <span class="mono">Flutter · IBM course project · 2026</span>
+    <div class="more two">
+      <a class="small rv" href="https://www.coursera.org/account/accomplishments/verify/XY9OLLDVPOR5" target="_blank" rel="noopener">
+        <span class="mono">Flutter · IBM course final project · 2026</span>
         <h4>Time Tracking App</h4>
         <p>Log time against projects and tasks, grouped by project and saved locally between sessions.</p>
         <div class="chips"><span>Flutter</span><span>Provider</span><span>LocalStorage</span></div>
-      </article>
-      <article class="small rv">
-        <span class="mono">C · PIEAS first semester · 2025</span>
-        <h4>Cricket Statistics System</h4>
-        <p>Console database of 25 players' ODI, T20 and Test stats, with search and side-by-side comparison.</p>
-        <div class="chips"><span>C</span><span>Structs</span><span>File handling</span></div>
-        <a class="textlink" href="https://github.com/jamshaidkhanniazi5965-ship-it/cricket-statistics-management-system" target="_blank" rel="noopener">GitHub <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-      </article>
-      <article class="small rv">
-        <span class="mono">Java · PIEAS OOP project · 2025</span>
+        <span class="textlink">View certificate <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+    </div>
+
+    <div class="cat rv"><h3>Semester projects</h3><span class="mono">PIEAS · BS Computer Science</span></div>
+    <div class="more two">
+      <a class="small rv" href="https://github.com/jamshaidkhanniazi5965-ship-it/cricket-statistics-management-system" target="_blank" rel="noopener">
+        <span class="mono">C · 1st semester · 2025</span>
+        <h4>Cricket Statistics Management System</h4>
+        <span class="with">Solo project</span>
+        <p>Console database of 25 international players' ODI, T20 and Test batting and bowling stats, with search by name or jersey number and side-by-side comparison.</p>
+        <div class="chips"><span>C</span><span>Structs</span><span>File handling</span><span>ANSI console UI</span></div>
+        <span class="textlink">View on GitHub <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+      <a class="small rv" href="https://github.com/jamshaidkhanniazi5965-ship-it/mess-management-system" target="_blank" rel="noopener">
+        <span class="mono">Java · 2nd semester OOP project · 2025</span>
         <h4>Mess Management System</h4>
-        <p>Desktop meal-management app with role-based access for admins, staff and students across 8 screens.</p>
+        <span class="with">Group project with <b>Madiha Riaz</b></span>
+        <p>Desktop meal-management app with role-based access for admins, staff and students across 8 Java Swing screens, backed by MySQL.</p>
         <div class="chips"><span>Java Swing</span><span>MySQL</span><span>OOP</span></div>
-        <a class="textlink" href="https://github.com/jamshaidkhanniazi5965-ship-it/mess-management-system" target="_blank" rel="noopener">GitHub <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-      </article>
+        <span class="textlink">View on GitHub <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
     </div>
   </div>
 </section>
