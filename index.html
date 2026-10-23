@@ -176,6 +176,8 @@ footer{padding:24px 0 36px;border-top:1px solid var(--line);font-size:14px;color
   .cvgrid{grid-template-columns:1.4fr .6fr;gap:18pt}
   .job{padding:6pt 0;break-inside:avoid}
   #experience{break-before:page}
+  .cv-contact-grid{display:grid;grid-template-columns:1fr 1.3fr;white-space:nowrap;gap:4pt 18pt;border-top:1px solid #000;padding-top:6pt}
+  .cv-contact-grid b{font-weight:600}
   .contact{display:none}
   a{text-decoration:none}
   /* CV is printed in black only */
@@ -210,11 +212,24 @@ footer{padding:24px 0 36px;border-top:1px solid var(--line);font-size:14px;color
         <a class="btn btn-main" href="#projects">View projects</a>
         <button class="btn btn-line" type="button" onclick="window.print()">Download CV</button>
       </div>
-      <p class="print-only" style="margin-top:6pt">jamshaidkhanniazi.5965@gmail.com · +92 323 8530709 · linkedin.com/in/jamshaid-khan-niazi-34471a386 · github.com/jamshaidkhanniazi5965-ship-it</p>
     </div>
     <div class="photo"><img src="assets/profile.jpg" alt="Jamshaid Khan Niazi" width="640" height="853"></div>
   </div>
 </div>
+
+<section class="print-only cv-contact">
+  <div class="wrap">
+    <div class="sec-head"><span class="label">Contact</span><h2>Contact details</h2></div>
+    <div class="cv-contact-grid">
+      <div><b>Email:</b> <span>jamshaidkhanniazi.5965@gmail.com</span></div>
+      <div><b>LinkedIn:</b> <span>linkedin.com/in/jamshaid-khan-niazi-34471a386</span></div>
+      <div><b>Phone / WhatsApp:</b> <span>+92 323 8530709</span></div>
+      <div><b>GitHub:</b> <span>github.com/jamshaidkhanniazi5965-ship-it</span></div>
+      <div><b>Location:</b> <span>Islamabad, Pakistan</span></div>
+      <div><b>Portfolio:</b> <span>jamshaidkhanniazi5965-ship-it.github.io</span></div>
+    </div>
+  </div>
+</section>
 
 <section id="projects">
   <div class="wrap">
