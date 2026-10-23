@@ -32,7 +32,6 @@ a{color:inherit}
 img{display:block;max-width:100%}
 .wrap{width:min(1080px,calc(100% - 48px));margin:0 auto}
 .label{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-.print-only{display:none}
 
 /* header */
 .top{position:sticky;top:0;z-index:20;background:rgba(245,247,250,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
@@ -155,28 +154,34 @@ footer{padding:24px 0 36px;border-top:1px solid var(--line);font-size:14px;color
   .shots img{height:200px}
   .clist span{display:none}
 }
+/* Downloadable CV: a separate one-colour layout, shown only when printing */
+.cv{display:none}
 @media print{
-  @page{margin:14mm}
-  body{background:#fff;font-size:10.5pt;line-height:1.45}
-  .top,.actions,.filters,.thumb,.card .more,.clist,footer,dialog{display:none !important}
-  .print-only{display:block}
-  section,.hero{padding:8pt 0;border:0}
-  .wrap{width:100%}
-  .hero .wrap{grid-template-columns:1fr 90pt;gap:16pt}
-  .hero h1{font-size:15pt;margin:4pt 0}
-  .photo{border:0;box-shadow:none}
-  .sec-head{margin-bottom:6pt}
-  .sec-head h2{font-size:15pt}
-  .grid{grid-template-columns:1fr 1fr;gap:6pt}
-  .card{border:0;border-top:1px solid #ddd;border-radius:0;break-inside:avoid}
-  .card[hidden]{display:flex}
-  .badge{margin:6pt 0 0;padding:0;background:none}
-  .card h3{font-size:12pt;margin:2pt 0}
-  .card p{margin:0 0 4pt}
-  .cvgrid{grid-template-columns:1.4fr .6fr;gap:18pt}
-  .job{padding:6pt 0;break-inside:avoid}
-  .contact{display:none}
-  a{text-decoration:none}
+  @page{size:A4;margin:11mm 15mm}
+  html,body{background:#fff}
+  body>*:not(.cv){display:none !important}
+  .cv{display:block;--cv:#1b2a4a;color:var(--cv);font:9.3pt/1.36 "IBM Plex Sans",Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .cv *{color:var(--cv)}
+  .cv a{text-decoration:none}
+  .cv-head{text-align:center;padding-bottom:7pt;border-bottom:1.5pt solid var(--cv)}
+  .cv-head h1{font:600 21pt/1.1 "IBM Plex Sans",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin:0}
+  .cv-role{font-size:10.5pt;letter-spacing:.06em;margin:3pt 0 4pt}
+  .cv-contact{font-size:8.8pt}
+  .cv-contact span+span::before{content:"|";margin:0 6pt}
+  .cv h2{font:600 9.6pt/1 "IBM Plex Sans",Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;margin:9pt 0 4.5pt;padding-bottom:2.5pt;border-bottom:.6pt solid var(--cv);break-after:avoid}
+  .cv p{margin:0}
+  .cv-item{margin:0 0 4.5pt;break-inside:avoid}
+  .cv-row{display:flex;justify-content:space-between;gap:12pt;align-items:baseline}
+  .cv-row b{font-weight:600;font-size:10pt}
+  .cv-row span{font-size:8.8pt;white-space:nowrap}
+  .cv-sub{font-style:italic;font-size:9pt}
+  .cv ul{margin:2pt 0 0;padding-left:13pt}
+  .cv li{margin:0 0 1pt}
+  .cv-tech{font-size:8.8pt;margin-top:1pt}
+  .cv-tech b{font-weight:600}
+  .cv-cols{display:grid;grid-template-columns:1fr 1.15fr;gap:16pt;break-inside:avoid}
+  .cv-grid{display:grid;grid-template-columns:auto 1fr;gap:2pt 12pt}
+  .cv-grid b{font-weight:600}
 }
 </style>
 </head>
@@ -197,7 +202,6 @@ footer{padding:24px 0 36px;border-top:1px solid var(--line);font-size:14px;color
 <div class="hero">
   <div class="wrap">
     <div>
-      <p class="print-only" style="font-family:Newsreader,serif;font-size:24pt;color:#151b26">Jamshaid Khan Niazi</p>
       <span class="label">Flutter &amp; Web Developer · Islamabad</span>
       <h1>I build apps and websites that <em>real businesses</em> use.</h1>
       <p class="lede">I'm Jamshaid Khan Niazi, a BS Computer Science student at PIEAS and founder of Niazi Tech. I've published an app on Google Play, built a point-of-sale system for a local shop, and made websites for clients around the world.</p>
@@ -205,7 +209,6 @@ footer{padding:24px 0 36px;border-top:1px solid var(--line);font-size:14px;color
         <a class="btn btn-main" href="#projects">View projects</a>
         <button class="btn btn-line" type="button" onclick="window.print()">Download CV</button>
       </div>
-      <p class="print-only" style="margin-top:6pt">jamshaidkhanniazi.5965@gmail.com · +92 323 8530709 · linkedin.com/in/jamshaid-khan-niazi-34471a386 · github.com/jamshaidkhanniazi5965-ship-it</p>
     </div>
     <div class="photo"><img src="assets/profile.jpg" alt="Jamshaid Khan Niazi" width="640" height="853"></div>
   </div>
@@ -357,6 +360,100 @@ footer{padding:24px 0 36px;border-top:1px solid var(--line);font-size:14px;color
     <div class="actions" id="dlgLinks"></div>
   </div>
 </dialog>
+
+<article class="cv" aria-hidden="true">
+  <header class="cv-head">
+    <h1>Jamshaid Khan Niazi</h1>
+    <div class="cv-role">Flutter &amp; Web Developer</div>
+    <div class="cv-contact"><span>Islamabad, Pakistan</span><span>+92 323 8530709</span><span>jamshaidkhanniazi.5965@gmail.com</span></div>
+    <div class="cv-contact"><span>linkedin.com/in/jamshaid-khan-niazi-34471a386</span><span>github.com/jamshaidkhanniazi5965-ship-it</span></div>
+    <div class="cv-contact"><span>Portfolio: jamshaidkhanniazi5965-ship-it.github.io</span></div>
+  </header>
+
+  <h2>Profile</h2>
+  <p>Computer Science undergraduate at PIEAS and founder of Niazi Tech, building Flutter apps and websites for real businesses: a published app on Google Play, a point-of-sale system for a local shop, and websites for international clients. Open to Flutter internships and freelance projects.</p>
+
+  <h2>Experience</h2>
+  <div class="cv-item">
+    <div class="cv-row"><b>Founder &amp; Developer</b><span>2025 – Present</span></div>
+    <div class="cv-sub">Niazi Tech, Islamabad</div>
+    <ul>
+      <li>Designed, built and published Cric Vibes Live, a cricket app with live scores, rankings and news, on Google Play.</li>
+      <li>Deliver apps and websites for clients under the Niazi Tech brand.</li>
+    </ul>
+  </div>
+  <div class="cv-item">
+    <div class="cv-row"><b>Freelance Web Developer</b><span>Client work · Remote</span></div>
+    <div class="cv-sub">International clients</div>
+    <ul>
+      <li>Designed and built haddadempire.com, a media and business-growth website for an agency.</li>
+      <li>Worked from client feedback through several revision rounds, then handled deployment and domains on Netlify.</li>
+    </ul>
+  </div>
+  <div class="cv-item">
+    <div class="cv-row"><b>Flutter Developer</b><span>Client work · On-site</span></div>
+    <div class="cv-sub">Lateef Book Depo, first paid project</div>
+    <ul>
+      <li>Built a Windows point-of-sale, inventory and credit system that replaced handwritten bills.</li>
+      <li>Installed it on-site and set up 80 mm thermal receipt printing, sales and profit reports, and backup and restore.</li>
+    </ul>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="cv-item">
+    <div class="cv-row"><b>Cric Vibes Live</b><span>Android app · 2025–26</span></div>
+    <p>Live scores, ICC rankings, player comparison, news and an offline tournament creator. Published on Google Play.</p>
+    <div class="cv-tech"><b>Tech:</b> Flutter, Dart, Firebase, Firestore, REST API, FCM</div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-row"><b>Lateef Book Depo — Shop Manager</b><span>Windows desktop app</span></div>
+    <p>Offline billing with cash, card, QR, credit and partial payments, customer credit ledger and receipt printing.</p>
+    <div class="cv-tech"><b>Tech:</b> Flutter (Windows), Drift / SQLite, PDF &amp; printing, Inno Setup</div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-row"><b>Time Tracking App</b><span>IBM course final project · 2026</span></div>
+    <p>Log time against projects and tasks, grouped by project and saved locally between sessions.</p>
+    <div class="cv-tech"><b>Tech:</b> Flutter, Dart, Provider, LocalStorage</div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-row"><b>Mess Management System</b><span>Java · 2nd semester · 2025</span></div>
+    <p>University mess management app with role-based access for admin, staff and students; built with a partner.</p>
+    <div class="cv-tech"><b>Tech:</b> Java, Swing, MySQL, OOP</div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-row"><b>Cricket Statistics System</b><span>C · 1st semester · 2025</span></div>
+    <p>Console database of 25 international players' ODI, T20 and Test statistics with search and side-by-side comparison.</p>
+    <div class="cv-tech"><b>Tech:</b> C, structs, file handling</div>
+  </div>
+
+  <h2>Education</h2>
+  <div class="cv-item">
+    <div class="cv-row"><b>BS Computer Science</b><span>In progress · 2nd year</span></div>
+    <div class="cv-sub">Pakistan Institute of Engineering and Applied Sciences (PIEAS), Islamabad</div>
+  </div>
+
+  <div class="cv-cols">
+  <div>
+  <h2>Skills</h2>
+  <div class="cv-grid">
+    <b>Mobile</b><span>Flutter, Dart, Provider, FCM, Play Console</span>
+    <b>Web</b><span>HTML, CSS, JavaScript, Netlify</span>
+    <b>Data</b><span>Firebase, Firestore, SQLite, MySQL, REST APIs</span>
+    <b>Languages</b><span>Dart, Java, C, Python</span>
+    <b>Tools</b><span>Git &amp; GitHub, Android Studio</span>
+  </div>
+
+  </div>
+  <div>
+  <h2>Certifications</h2>
+  <div class="cv-grid">
+    <b>IBM</b><span>Flutter and Dart: Developing iOS, Android, and Mobile Apps · Coursera, 2026</span>
+    <b>Google</b><span>Crash Course on Python · Coursera, 2026</span>
+    <b>Alison</b><span>Introduction to Mobile App Development with Flutter, 2026</span>
+  </div>
+  </div>
+  </div>
+</article>
 
 <script>
 const PROJECTS = {"lateef": {"id": "lateef", "cat": "Client", "title": "Lateef Book Depo \u2014 Shop Manager", "short": "Point-of-sale, inventory and credit system for a stationery shop.", "meta": "Windows desktop app \u00b7 First paid client project", "thumb": "assets/lateef-analytics.webp", "shots": ["assets/lateef-analytics.webp", "assets/lateef-udhaar.webp"], "kind": "wide", "about": "An offline point-of-sale, inventory and credit (udhaar) system that replaced handwritten bills at a stationery shop. I handled everything from gathering requirements to on-site installation and printer setup.", "points": ["Billing with cash, card, QR, credit and partial payments", "Customer credit ledger with part-payments", "80 mm thermal receipt printing", "Sales and profit reports, JSON backup and restore"], "tech": ["Flutter (Windows)", "Drift / SQLite", "PDF & printing", "Inno Setup"], "links": [["GitHub", "https://github.com/jamshaidkhanniazi5965-ship-it/lateef-book-depo-shop-manager"]]}, "haddad": {"id": "haddad", "cat": "Client", "title": "Haddad Empire", "short": "Media and business-growth website for an agency.", "meta": "Website \u00b7 International client", "thumb": "assets/haddad-empire.webp", "shots": ["assets/haddad-empire.webp"], "kind": "wide", "about": "A media showcase and business-growth website for a media and outreach agency, refined over several rounds of client feedback.", "points": ["Custom branding around the family crest", "Founder story, services, partners and business showcase", "Contact form that sends by email, WhatsApp or SMS", "Deployed on Netlify with a custom domain"], "tech": ["HTML", "CSS", "JavaScript", "Netlify"], "links": [["Visit site", "https://haddadempire.com"]]}, "cricvibes": {"id": "cricvibes", "cat": "Personal", "title": "Cric Vibes Live", "short": "Cricket app with live scores, rankings and stats. Live on Google Play.", "meta": "Android app \u00b7 Niazi Tech \u00b7 2025\u201326", "thumb": "assets/cricvibes-icon.webp", "shots": ["assets/cricvibes-scores.webp", "assets/cricvibes-rankings.webp", "assets/cricvibes-compare.webp", "assets/cricvibes-news.webp"], "kind": "phone", "about": "A cricket companion app I designed, built and published on my own under Niazi Tech, with both online and offline features.", "points": ["Live international and domestic scores", "ICC rankings, player search and head-to-head comparison", "Cricket news and upcoming match schedule", "Offline tournament creator, world records and rules"], "tech": ["Flutter", "Dart", "Firebase", "Firestore", "REST API", "FCM", "Play Console"], "links": [["Google Play", "https://play.google.com/store/apps/details?id=com.niazicricket.app"], ["GitHub", "https://github.com/jamshaidkhanniazi5965-ship-it/cric-vibes-live"]]}, "timetracker": {"id": "timetracker", "cat": "Personal", "title": "Time Tracking App", "short": "Log time against projects and tasks, saved locally.", "meta": "Flutter \u00b7 IBM course final project \u00b7 2026", "thumb": null, "label": "Flutter", "shots": [], "kind": "none", "about": "The final project for IBM's Flutter and Dart course on Coursera. Users log time entries against projects and tasks, see them grouped by project, and everything is saved locally between sessions.", "points": ["Add, view and delete time entries", "Group entries by project", "Manage projects and tasks", "Provider state management and multi-screen navigation"], "tech": ["Flutter", "Dart", "Provider", "LocalStorage"], "links": [["View certificate", "https://www.coursera.org/account/accomplishments/verify/XY9OLLDVPOR5"]]}, "cricstats": {"id": "cricstats", "cat": "Semester", "title": "Cricket Statistics System", "short": "Console database of 25 players' stats with search and comparison.", "meta": "C \u00b7 1st semester \u00b7 2025 \u00b7 Solo project", "thumb": null, "label": "C", "shots": [], "kind": "none", "about": "My first-semester project at PIEAS, built on my own in C. It stores detailed batting and bowling statistics for 25 international players across ODI, T20 and Test formats.", "points": ["Search players by name or jersey number", "Side-by-side comparison of two players", "Format-wise statistics (ODI, T20, Test)", "Coloured terminal UI using ANSI colours"], "tech": ["C", "Structs", "File handling"], "links": [["GitHub", "https://github.com/jamshaidkhanniazi5965-ship-it/cricket-statistics-management-system"]]}, "mess": {"id": "mess", "cat": "Semester", "title": "Mess Management System", "short": "Java desktop app for managing university meals.", "meta": "Java \u00b7 2nd semester OOP project \u00b7 2025 \u00b7 With Madiha Riaz", "thumb": null, "label": "Java", "shots": [], "kind": "none", "about": "A second-semester OOP project at PIEAS, built together with my group member Madiha Riaz. A desktop app for running the university mess, with separate access for admins, staff and students.", "points": ["Role-based access for admin, staff and student", "8 GUI screens built with Java Swing / AWT", "MySQL 8.0 database backend", "Consistent layout using GridBagLayout"], "tech": ["Java", "Java Swing", "MySQL", "OOP"], "links": [["GitHub", "https://github.com/jamshaidkhanniazi5965-ship-it/mess-management-system"]]}};
