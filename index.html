@@ -175,20 +175,20 @@ dialog::backdrop{background:rgba(16,24,40,.5)}
 
 /* ---------- printed CV (Download CV) ---------- */
 @media print{
-  @page{size:A4;margin:9mm 13mm}
-  body{font:8.8pt/1.34 Inter,Arial,sans-serif;color:#000}
+  @page{size:A4;margin:8mm 13mm}
+  body{font:8.8pt/1.3 Inter,Arial,sans-serif;color:#000}
   .site,dialog{display:none !important}
   .cv{display:block}
   .cv a{color:#000;text-decoration:none}
-  .cv-head{display:grid;grid-template-columns:1fr 66pt;gap:16pt;align-items:center;border-bottom:1.2pt solid #000;padding-bottom:7pt}
+  .cv-head{display:grid;grid-template-columns:1fr 58pt;gap:16pt;align-items:center;border-bottom:1.2pt solid #000;padding-bottom:7pt}
   .cv-head h1{font-size:21pt;letter-spacing:-.01em}
-  .cv-head .cv-role{font-size:11pt;margin:2pt 0 7pt}
-  .cv-contact{display:grid;grid-template-columns:auto auto;justify-content:start;gap:1.5pt 18pt;margin:0;font-size:8.3pt;white-space:nowrap}
-  .cv-contact div{display:grid;grid-template-columns:40pt auto}
+  .cv-head .cv-role{font-size:11.5pt;margin:3pt 0 0}
+  .cv-contact{break-inside:avoid;display:grid;grid-template-columns:auto auto;justify-content:start;gap:1.5pt 28pt;margin:0;white-space:nowrap}
+  .cv-contact div{display:grid;grid-template-columns:50pt auto}
   .cv-contact dt{font-weight:600}
   .cv-contact dd{margin:0}
-  .cv-head img{width:66pt;height:66pt;border-radius:50%;object-fit:cover}
-  .cv h2{font-size:10pt;text-transform:uppercase;letter-spacing:.08em;border-bottom:.6pt solid #000;padding-bottom:2pt;margin:8pt 0 4pt}
+  .cv-head img{width:58pt;height:58pt;border-radius:50%;object-fit:cover}
+  .cv h2{break-after:avoid;font-size:10pt;text-transform:uppercase;letter-spacing:.08em;border-bottom:.6pt solid #000;padding-bottom:2pt;margin:7pt 0 3.5pt}
   .cv-item{margin-bottom:5pt;break-inside:avoid}
   .cv-line{display:flex;justify-content:space-between;gap:12pt}
   .cv-line b{font-size:10pt}
@@ -249,9 +249,9 @@ dialog::backdrop{background:rgba(16,24,40,.5)}
           <h3>Freelance Web &amp; App Developer</h3>
           <div class="org">Self-employed · Remote, clients in Australia, the USA and Pakistan</div>
           <ul>
-          <li>Built and launched <a href="https://haddadempire.com">haddadempire.com</a> for a Sydney media agency and <a href="https://germani.com.au">germani.com.au</a> for a Sydney jewellery house and academy.</li>
+          <li>Built and launched <a href="https://haddadempire.com">haddadempire.com</a> for a Sydney media agency and <a href="https://germani.com.au">germani.com.au</a> for a Sydney jewellery house.</li>
           <li>Delivered a Windows point-of-sale, inventory and credit system for Lateef Book Depo; installed it on site and set up thermal receipt printing. It replaced handwritten bills.</li>
-          <li>Currently building a retail and wholesale Shopify store for We Decorate Kakes (Missouri, USA) and a website for BDM To You (Australia).</li>
+          <li>Building a retail and wholesale Shopify store for We Decorate Kakes (USA) and a website for BDM To You (Australia).</li>
           <li>Work directly with clients from requirements and design reviews to hosting, domains, SEO and launch.</li>
           </ul>
         </div>
@@ -262,7 +262,7 @@ dialog::backdrop{background:rgba(16,24,40,.5)}
           <h3>Founder &amp; Developer</h3>
           <div class="org">Niazi Tech · Islamabad</div>
           <ul>
-          <li>Designed, built and published Cric Vibes Live, a Flutter cricket app with live scores, rankings, player stats and news, on Google Play.</li>
+          <li>Designed, built and published Cric Vibes Live, a Flutter cricket app with live scores, rankings and stats, on Google Play.</li>
           </ul>
         </div>
       </div>
@@ -438,14 +438,6 @@ dialog::backdrop{background:rgba(16,24,40,.5)}
     <div>
       <h1>Jamshaid Khan Niazi</h1>
       <div class="cv-role">Flutter &amp; Web Developer</div>
-      <dl class="cv-contact">
-        <div><dt>Phone</dt><dd>+92 323 8530709</dd></div>
-        <div><dt>LinkedIn</dt><dd>linkedin.com/in/jamshaid-khan-niazi-34471a386</dd></div>
-        <div><dt>Email</dt><dd>jamshaidkhanniazi.5965@gmail.com</dd></div>
-        <div><dt>GitHub</dt><dd>github.com/jamshaidkhanniazi5965-ship-it</dd></div>
-        <div><dt>Location</dt><dd>Islamabad, Pakistan</dd></div>
-        <div><dt>Portfolio</dt><dd>jamshaidkhanniazi5965-ship-it.github.io</dd></div>
-      </dl>
     </div>
     <img src="assets/headshot.jpg" alt="">
   </div>
@@ -457,8 +449,8 @@ dialog::backdrop{background:rgba(16,24,40,.5)}
   <div class="cv-item"><div class="cv-line"><b>BS Computer Science</b><span>In progress · 2nd year</span></div><div>Pakistan Institute of Engineering and Applied Sciences (PIEAS), Islamabad</div></div>
 
   <h2>Experience</h2>
-  <div class="cv-item"><div class="cv-line"><b>Freelance Web &amp; App Developer</b><span>Sep 2026 – Present</span></div><div class="cv-muted">Self-employed · Remote, clients in Australia, the USA and Pakistan</div><ul><li>Built and launched <a href="https://haddadempire.com">haddadempire.com</a> for a Sydney media agency and <a href="https://germani.com.au">germani.com.au</a> for a Sydney jewellery house and academy.</li><li>Delivered a Windows point-of-sale, inventory and credit system for Lateef Book Depo; installed it on site and set up thermal receipt printing. It replaced handwritten bills.</li><li>Currently building a retail and wholesale Shopify store for We Decorate Kakes (Missouri, USA) and a website for BDM To You (Australia).</li><li>Work directly with clients from requirements and design reviews to hosting, domains, SEO and launch.</li></ul></div>
-<div class="cv-item"><div class="cv-line"><b>Founder &amp; Developer</b><span>2025 – Present</span></div><div class="cv-muted">Niazi Tech · Islamabad</div><ul><li>Designed, built and published Cric Vibes Live, a Flutter cricket app with live scores, rankings, player stats and news, on Google Play.</li></ul></div>
+  <div class="cv-item"><div class="cv-line"><b>Freelance Web &amp; App Developer</b><span>Sep 2026 – Present</span></div><div class="cv-muted">Self-employed · Remote, clients in Australia, the USA and Pakistan</div><ul><li>Built and launched <a href="https://haddadempire.com">haddadempire.com</a> for a Sydney media agency and <a href="https://germani.com.au">germani.com.au</a> for a Sydney jewellery house.</li><li>Delivered a Windows point-of-sale, inventory and credit system for Lateef Book Depo; installed it on site and set up thermal receipt printing. It replaced handwritten bills.</li><li>Building a retail and wholesale Shopify store for We Decorate Kakes (USA) and a website for BDM To You (Australia).</li><li>Work directly with clients from requirements and design reviews to hosting, domains, SEO and launch.</li></ul></div>
+<div class="cv-item"><div class="cv-line"><b>Founder &amp; Developer</b><span>2025 – Present</span></div><div class="cv-muted">Niazi Tech · Islamabad</div><ul><li>Designed, built and published Cric Vibes Live, a Flutter cricket app with live scores, rankings and stats, on Google Play.</li></ul></div>
 <div class="cv-item"><div class="cv-line"><b>Social Media &amp; Digital Marketing</b><span>Freelance</span></div><div class="cv-muted">Freelance clients · Remote</div><ul><li>Manage social media pages and create content for clients, promoting their businesses alongside the websites I build.</li></ul></div>
 
   <h2>Selected projects</h2>
@@ -474,6 +466,17 @@ dialog::backdrop{background:rgba(16,24,40,.5)}
 
   <h2>Certifications</h2>
   <ul><li>Flutter and Dart: Developing iOS, Android, and Mobile Apps <span class="cv-muted">· IBM · Coursera · 2026</span></li><li>Crash Course on Python <span class="cv-muted">· Google · Coursera · 2026</span></li><li>Introduction to Mobile App Development with Flutter <span class="cv-muted">· Alison · 2026</span></li></ul>
+
+  <h2>Contact</h2>
+  <dl class="cv-contact">
+        <div><dt>Phone</dt><dd>+92 323 8530709</dd></div>
+        <div><dt>LinkedIn</dt><dd>linkedin.com/in/jamshaid-khan-niazi-34471a386</dd></div>
+        <div><dt>Email</dt><dd>jamshaidkhanniazi.5965@gmail.com</dd></div>
+        <div><dt>GitHub</dt><dd>github.com/jamshaidkhanniazi5965-ship-it</dd></div>
+        <div><dt>Location</dt><dd>Islamabad, Pakistan</dd></div>
+        <div><dt>Portfolio</dt><dd>jamshaidkhanniazi5965-ship-it.github.io</dd></div>
+      </dl>
+
 </div>
 
 <script>
