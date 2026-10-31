@@ -180,11 +180,14 @@ dialog::backdrop{background:rgba(16,24,40,.5)}
   .site,dialog{display:none !important}
   .cv{display:block}
   .cv a{color:#000;text-decoration:none}
-  .cv-head{display:grid;grid-template-columns:1fr 74pt;gap:16pt;align-items:center;border-bottom:1.2pt solid #000;padding-bottom:7pt}
+  .cv-head{display:grid;grid-template-columns:1fr 66pt;gap:16pt;align-items:center;border-bottom:1.2pt solid #000;padding-bottom:7pt}
   .cv-head h1{font-size:21pt;letter-spacing:-.01em}
-  .cv-head .cv-role{font-size:11pt;margin:2pt 0 6pt}
-  .cv-contact{display:flex;flex-wrap:wrap;gap:1pt 12pt;font-size:8.8pt}
-  .cv-head img{width:74pt;height:74pt;border-radius:50%;object-fit:cover}
+  .cv-head .cv-role{font-size:11pt;margin:2pt 0 7pt}
+  .cv-contact{display:grid;grid-template-columns:auto auto;justify-content:start;gap:1.5pt 18pt;margin:0;font-size:8.3pt;white-space:nowrap}
+  .cv-contact div{display:grid;grid-template-columns:40pt auto}
+  .cv-contact dt{font-weight:600}
+  .cv-contact dd{margin:0}
+  .cv-head img{width:66pt;height:66pt;border-radius:50%;object-fit:cover}
   .cv h2{font-size:10pt;text-transform:uppercase;letter-spacing:.08em;border-bottom:.6pt solid #000;padding-bottom:2pt;margin:8pt 0 4pt}
   .cv-item{margin-bottom:5pt;break-inside:avoid}
   .cv-line{display:flex;justify-content:space-between;gap:12pt}
@@ -435,7 +438,14 @@ dialog::backdrop{background:rgba(16,24,40,.5)}
     <div>
       <h1>Jamshaid Khan Niazi</h1>
       <div class="cv-role">Flutter &amp; Web Developer</div>
-      <div class="cv-contact"><span>Islamabad, Pakistan</span><span>+92 323 8530709</span><span>jamshaidkhanniazi.5965@gmail.com</span><span>linkedin.com/in/jamshaid-khan-niazi-34471a386</span><span>github.com/jamshaidkhanniazi5965-ship-it</span><span>jamshaidkhanniazi5965-ship-it.github.io</span></div>
+      <dl class="cv-contact">
+        <div><dt>Phone</dt><dd>+92 323 8530709</dd></div>
+        <div><dt>LinkedIn</dt><dd>linkedin.com/in/jamshaid-khan-niazi-34471a386</dd></div>
+        <div><dt>Email</dt><dd>jamshaidkhanniazi.5965@gmail.com</dd></div>
+        <div><dt>GitHub</dt><dd>github.com/jamshaidkhanniazi5965-ship-it</dd></div>
+        <div><dt>Location</dt><dd>Islamabad, Pakistan</dd></div>
+        <div><dt>Portfolio</dt><dd>jamshaidkhanniazi5965-ship-it.github.io</dd></div>
+      </dl>
     </div>
     <img src="assets/headshot.jpg" alt="">
   </div>
