@@ -62,8 +62,8 @@ img{display:block;max-width:100%}
 .facts li{display:flex;align-items:center;gap:7px}
 .facts svg{width:16px;height:16px;color:var(--ink-3)}
 .cta{display:flex;flex-wrap:wrap;gap:10px}
-.portrait{border-radius:14px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;background:var(--soft)}
-.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait{width:240px;aspect-ratio:1;border-radius:50%;padding:6px;background:#fff;border:1px solid var(--line);box-shadow:0 0 0 6px var(--soft),0 18px 40px rgba(16,24,40,.14);justify-self:center}
+.portrait img{width:100%;height:100%;border-radius:50%;object-fit:cover}
 
 /* sections */
 section{padding:64px 0;border-bottom:1px solid var(--line)}
@@ -152,7 +152,7 @@ dialog::backdrop{background:rgba(16,24,40,.5)}
 
 @media(max-width:860px){
   .intro .wrap{grid-template-columns:1fr;gap:32px}
-  .portrait{max-width:240px;order:-1}
+  .portrait{width:180px;order:-1;justify-self:start}
   .cols,.contact .wrap{grid-template-columns:1fr;gap:40px}
   .xp{grid-template-columns:1fr;gap:4px}
 }
@@ -240,7 +240,7 @@ dialog::backdrop{background:rgba(16,24,40,.5)}
         <a class="btn" href="#contact">Get in touch</a>
       </div>
     </div>
-    <div class="portrait"><img src="assets/portrait.jpg" alt="Jamshaid Khan Niazi" width="480" height="600"></div>
+    <div class="portrait"><img src="assets/headshot.jpg" alt="Jamshaid Khan Niazi" width="400" height="400"></div>
   </div>
 </div>
 
